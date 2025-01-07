@@ -228,40 +228,44 @@ In your case, since you are working with a vanilla Java setup (no frameworks lik
 │   │   ├── ProcessServlet.java     // Handle onboarding process API requests
 │   │   └── CompanyServlet.java     // Handle company-related API requests
 │   ├── /models
-│   │   ├── User.java                  // User entity (company admin)
-│   │   ├── Team.java                  // Team entity
-│   │   ├── Process.java               // Onboarding process entity
-│   │   ├── Worker.java                // Worker entity
-│   │   └── Company.java               // Company entity
+│   │   ├── User.java               // User entity (company admin)
+│   │   ├── Team.java               // Team entity
+│   │   ├── Process.java            // Onboarding process entity
+│   │   ├── Worker.java             // Worker entity
+│   │   └── Company.java            // Company entity
 │   ├── /services
-│   │   ├── UserService.java           // Logic for user operations
-│   │   ├── TeamService.java           // Logic for team operations
-│   │   ├── ProcessService.java        // Logic for process operations
-│   │   └── CompanyService.java        // Logic for company operations
+│   │   ├── UserService.java        // Logic for user operations
+│   │   ├── TeamService.java        // Logic for team operations
+│   │   ├── ProcessService.java     // Logic for process operations
+│   │   └── CompanyService.java     // Logic for company operations
 │   ├── /utils
-│   │   ├── DBConnection.java         // Database connection setup
+│   │   ├── DBConnection.java      // Database connection setup
 │   └── /config
-│       ├── DBConfig.java             // DB configurations (JDBC setup)
-│       └── AppConfig.java            // Application-level settings
+│       ├── DBConfig.java          // DB configurations (JDBC setup)
+│       └── AppConfig.java         // Application-level settings
 └── /frontend
     ├── /assets
     │   ├── /css
-    │   │   └── style.css            // General styles
+    │   │   └── style.css          // General styles
     │   ├── /images
     │   └── /js
-    │       └── app.js               // Frontend JS for AJAX requests
+    │       └── app.js             // Frontend JS for AJAX requests
     ├── /views
-    │   ├── companyDashboard.html
-    │   ├── teamDashboard.html
-    │   ├── processDashboard.html
-    │   ├── addEditForm.html          // Template for adding/editing forms
+    │   ├── index.html             // Home page, welcome/signup/login prompt
+    │   ├── login.html             // Login page
+    │   ├── signup.html            // Signup page
+    │   ├── companyDashboard.html  // Company dashboard page
+    │   ├── teamDashboard.html     // Team dashboard page
+    │   ├── processDashboard.html  // Process dashboard page
+    │   ├── addEditForm.html       // Template for adding/editing forms
     └── /controllers
-        ├── companyController.js     // Frontend logic for company dashboard
-        ├── teamController.js        // Frontend logic for team dashboard
-        ├── processController.js     // Frontend logic for process dashboard
-        ├── formController.js        // Logic for forms (create/edit)
-        └── common.js                // Shared frontend logic (AJAX, validation)
-
+        ├── companyController.js   // Frontend logic for company dashboard
+        ├── teamController.js      // Frontend logic for team dashboard
+        ├── processController.js   // Frontend logic for process dashboard
+        ├── formController.js      // Logic for forms (create/edit)
+        ├── loginController.js     // Login page frontend logic
+        ├── signupController.js    // Signup page frontend logic
+        └── common.js              // Shared frontend logic (AJAX, validation)
 ```
 
 - **Backend (Java)**:
@@ -377,34 +381,39 @@ This project structure enables parallel development by dividing responsibilities
 
 ### **Timeline for 24 Hours**
 
-#### **Hour 1-3: Initial Setup**
+#### **Hour 10:00-12:00: Initial Setup**
 - Set up the project repositories.
 - Create the database schema and tables (SQL).
 - Set up backend project structure (Java, JDBC).
 - Set up the frontend project structure (HTML, CSS, JS).
 
-#### **Hour 4-8: Backend Development (Part 1)**
+#### **Hour 12:00-15:00: Frontend Development (Part 1)**
+- Develop the frontend for the Company Dashboard, Team Dashboard, and Process Dashboard.
+- Design the forms for adding/editing teams, processes, and workers.
+
+#### **Hour 15:00-19:00: Backend Development (Part 1)**
+- Implement Company, User, Team, Process, Stage, Worker Classes.
 - Implement the Users Server: Authentication routes (login/signup).
 - Implement the Teams Server: CRUD routes for team management.
 - Implement the Processes Server: CRUD routes for managing processes.
 
-#### **Hour 9-12: Backend Development (Part 2)**
+#### **Hour 19:00-22:00: Backend Development (Part 2)**
 - Implement the Companies Server: Routes for managing company data.
 - Connect JDBC for all servers.
 - Begin implementing frontend pages for Company Dashboard, Team Dashboard, Process Dashboard.
 
-#### **Hour 13-16: Frontend Development (Part 1)**
-- Develop the frontend for the Company Dashboard, Team Dashboard, and Process Dashboard.
-- Design the forms for adding/editing teams, processes, and workers.
-
-#### **Hour 17-20: Frontend Development (Part 2)**
+#### **Hour 23:00-03:00: Frontend Development (Part 2)**
 - Finalize all forms: Company user, team creation, onboarding process creation.
 - Implement AJAX calls to the REST APIs from frontend pages.
   
-#### **Hour 21-24: Testing, Debugging & Final Touches**
+#### **Hour 03:00-05:00: Testing, Debugging & Final Touches**
 - Test all pages and ensure proper API connections.
 - Debug any issues with data flow between frontend and backend.
 - Add final CSS styling, ensure responsive design.
+
+#### **Hour 05:00-08:00: SLEEP ?**
+
+#### **Hour 05:00-08:00: Presentation Rehearsal**
 
 ---
 
