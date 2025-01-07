@@ -66,7 +66,7 @@ When you start working on a new feature or task, you should create a new branch.
 1. **Ensure you're up to date with the remote main branch:**
    Before starting any new work, make sure your local `main` branch is up to date with the remote repository.
    ```bash
-   git checkout main
+   git checkout main  
    git pull origin main
    ```
 

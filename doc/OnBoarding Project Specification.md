@@ -270,8 +270,7 @@ In your case, since you are working with a vanilla Java setup (no frameworks lik
 
 - **Backend (Java)**:
   - **Controllers**: Will handle incoming API requests and return responses. Each pair can work on their respective controllers (one for users, teams, processes, or companies).
-  Backend Controllers = Servlets:
-    The servlets folder replaces the controllers. These servlets are now responsible for handling incoming HTTP requests, routing them to the appropriate service layer (where business logic is implemented), and sending back the response to the client (frontend).
+  Backend Controllers = Servlets. servlets are responsible for handling incoming HTTP requests, routing them to the appropriate service layer (where business logic is implemented), and sending back the response to the client (frontend).
   - **Models**: Represent the data entities, which can be shared across different backend components.
   Models are Java classes that represent the data entities of your application, like User.java, Team.java, Process.java, etc.
   - **Services**: Will contain the business logic, separate from the controllers. Each pair can work on implementing logic for their respective entities.
@@ -428,18 +427,8 @@ This project structure enables parallel development by dividing responsibilities
 
 This project will provide companies with a robust platform for managing employee onboarding processes. By breaking the project into clearly defined tasks and using a team-based approach, we can efficiently deliver a working solution within the given 24-hour timeframe.
 
-You're absolutely right! In the example I provided, I focused on using the servlet and JDBC to directly handle the request, but I didn't include the use of Java classes to represent the data or to abstract business logic. Let’s fix that.
-
-In a more structured, object-oriented approach, you would definitely use **Java classes** to represent entities like `Team`, `Process`, `Company`, etc. These classes would be part of the backend business logic layer, and they would help with managing the data and interaction with the database.
-
-I'll modify the example to show where and how Java classes would fit into this flow. The main idea is that the **Java classes** should help:
-- Represent the data entities (e.g., Team, Process).
-- Encapsulate the business logic (e.g., assigning a process to a team).
-- Serve as the interface between your servlet and database (e.g., handling data through `DAO` - Data Access Objects).
 
 ### **Full Front-To-Back Data Flow Example**
-
-Let's walk through the same route, but this time we will add the appropriate **Java classes** and **business logic** layers.
 
 ---
 
