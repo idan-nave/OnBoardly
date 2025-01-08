@@ -1,0 +1,134 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #6A11CB, #2575FC);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  text-align: center; /* Center text content globally */
+}
+
+/* Container */
+.container {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  height: 80vh; /* Take 80% of the vertical height */
+  max-width: 1400px; /* Ensure it doesn't get too wide */
+  padding: 40px; /* Increase padding for better spacing */
+  text-align: center; /* Center text inside the container */
+  display: flex;
+  flex-direction: column; /* Arrange content vertically */
+  justify-content: space-between; /* Space out content evenly */
+}
+
+/* Header Section */
+header h1 {
+  font-size: 3rem; /* Larger font size */
+  color: #000;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 1.5rem; /* Larger font size for subtitle */
+  color: #666;
+}
+
+/* Navigation Section */
+nav ul {
+  list-style: none; /* Removes dots from the list */
+  padding: 0;
+  margin: 20px 0; /* Increase spacing between nav and header */
+  display: flex;
+  justify-content: center; /* Centers the navigation menu */
+  gap: 30px; /* Increase gap between nav items */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 15px 30px; /* Increase button size */
+  font-size: 1.2rem; /* Larger text size */
+  background: linear-gradient(to right, #6A11CB, #2575FC);
+  border-radius: 8px; /* Slightly larger radius */
+  transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: linear-gradient(to right, #2575FC, #6A11CB);
+}
+
+/* Main Content Section */
+.main-content h2 {
+  font-size: 2.5rem; /* Larger section title */
+  margin-bottom: 30px; /* Add spacing below title */
+  color: #000;
+}
+
+/* Options Section */
+.options {
+  display: flex;
+  justify-content: center; /* Center aligns the options */
+  gap: 30px; /* Increase space between options */
+  flex-wrap: wrap;
+}
+
+.option {
+  flex: 1;
+  min-width: 300px; /* Increase minimum size */
+  background: #f9f9f9;
+  border-radius: 12px; /* Larger radius */
+  padding: 30px; /* Increase padding */
+  border: 1px solid #e0e0e0;
+  text-align: center; /* Center text inside each option */
+  transition: box-shadow 0.3s ease;
+}
+
+.option:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.option h3 {
+  font-size: 2rem; /* Larger option title */
+  margin-bottom: 20px;
+}
+
+.option p {
+  font-size: 1.2rem; /* Larger description text */
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(to right, #6A11CB, #2575FC);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 15px 30px; /* Larger button size */
+  font-size: 1.5rem; /* Larger button text */
+  border-radius: 8px; /* Rounded button */
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #2575FC, #6A11CB);
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  font-size: 1.2rem; /* Larger footer text */
+  color: #aaa;
+}
+
+footer p {
+  margin: 0;
+}
