@@ -1,106 +1,82 @@
-/* Reusable Styles Palette */
-:root {
-    /* Colors For use in the App */
-    --color-primary: #004085;
-    --color-primary-light: #0069d9;
-    --color-accent: #28a745;
-    --color-accent-hover: #218838;
-    --color-background: #f9f9f9;
-    --color-text: #333;
-    --color-white: #fff;
-  
-    /* Font Sizes */
-    --font-size-small: 0.875rem;
-    --font-size-medium: 1rem;
-    --font-size-large: 1.5rem;
-    --font-size-xlarge: 2.5rem;
-  
-    /* Spacing */
-    --spacing-small: 0.5rem;
-    --spacing-medium: 1rem;
-    --spacing-large: 2rem;
-    --spacing-xlarge: 5rem;
-  
-    /* Border Radius */
-    --border-radius: 5px;
-  
-    /* HOVER BUTTON Transition */
-    --transition: all 0.3s ease-in-out;
-  
-    /* Shadows */
-    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* General Body Styles */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6A11CB, #2575FC);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 40vh;
-    margin: 0;
+    color: #333;
+    text-align: center; /* Center text content globally */
+    height: 100vh; /* Ensure full viewport height */
 }
 
-/* Header Styling */
-h1 {
-    font-size: var(--font-size-xlarge);
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-large);
-    text-align: center;
-}
-
-/* Form Container */
-form {
-    background-color: var(--color-white);
-    padding: var(--spacing-medium);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    width: 300px;
+.container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px; /* Adjust for a smaller container */
+    padding: 40px;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center elements horizontally */
 }
 
-/* Label Styling */
-label {
-    display: block;
-    margin-bottom: var(--spacing-small);
-    font-size: var(--font-size-medium);
-    color: var(--color-text);
+header h1 {
+    font-size: 2.5rem; /* Adjust font size for header */
+    color: #000;
+    margin-bottom: 20px;
 }
 
-/* Input Fields Styling */
-input[type="text"], input[type="password"] {
+header p {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+form {
     width: 100%;
-    padding: var(--spacing-small);
-    margin-bottom: var(--spacing-medium);
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space out form elements */
+}
+
+form label {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: bold;
+    text-align: left; /* Align text to the left */
+}
+
+form input {
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-small);
-    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    width: 100%; /* Make input fill the container */
+    margin-bottom: 10px;
 }
 
-/* Button Styling */
-button[type="submit"] {
-    display: block; /* Ensure the button is a block-level element */
-    width: 20%;
-    padding: var(--spacing-medium);
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border: none;
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-medium);
+#button {
+    background: linear-gradient(to right, #6A11CB, #2575FC);
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 8px;
     cursor: pointer;
-    transition: var(--transition);
+    width: 100%; /* Make the button width fill the container */
+    border: none;
 }
 
-/* Button Hover Effect */
-button[type="submit"]:hover {
-    background-color: var(--color-primary-light);
+#button:hover {
+    background: linear-gradient(to right, #2575FC, #6A11CB);
 }
 
-/* Placeholder Styling */
-input::placeholder {
-    color: #888;
+/* Footer (Optional) */
+footer {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #aaa;
 }
