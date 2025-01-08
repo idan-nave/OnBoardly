@@ -1,15 +1,14 @@
-const add = document.getElementById('button');
+// מאזינים לכפתורים
+const add = document.getElementById('buttonAdd');
+const finish = document.getElementById('buttonFinish');
+
+// לוגיקה להוספת שלב חדש
 add.addEventListener('click', () => {
-    // קבלת אלמנט הסטייג'ים
     const stagesContainer = document.getElementById('stages');
-
-    // קבלת מספר הסטייג'ים הקיימים
     const currentStages = stagesContainer.querySelectorAll('input').length;
-
-    // יצירת stage חדש
     const newStageNumber = currentStages + 1;
 
-    // יצירת ה-label וה-input החדש
+    // יצירת label ו-input עבור השלב החדש
     const newLabel = document.createElement('label');
     newLabel.setAttribute('for', `stage-${newStageNumber}`);
     newLabel.innerText = `Stage ${newStageNumber}:`;
@@ -19,7 +18,39 @@ add.addEventListener('click', () => {
     newInput.setAttribute('id', `stage-${newStageNumber}`);
     newInput.setAttribute('placeholder', `Enter your stage ${newStageNumber}`);
 
-    // הוספת ה-label וה-input החדשים למיכל הסטייג'ים
-    stagesContainer.insertBefore(newLabel, add); // ממקמים את ה-label לפני הכפתור
-    stagesContainer.insertBefore(newInput, add); // ממקמים את ה-input לפני הכפתור
+    // הוספת האלמנטים החדשים לתוך מיכל הסטייג'ים
+    stagesContainer.appendChild(newLabel);
+    stagesContainer.appendChild(newInput);
+});
+
+// לוגיקה לשליחת הנתונים
+finish.addEventListener('click', () => {
+    const inputs = document.querySelectorAll('#stages input');
+    const stagesData = {};
+
+    // איסוף נתונים מכל השדות
+    inputs.forEach((input, index) => {
+        const key = `stage-${index + 1}`;
+        stagesData[key] = input.value;
+    });
+
+    // יצירת JSON ושליחת POST
+    const jsonData = JSON.stringify({ stages: stagesData });
+
+    fetch('/api/stages', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: jsonData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Server Response:', data);
+        alert('Stages sent successfully!');
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred while sending stages.');
+    });
 });
