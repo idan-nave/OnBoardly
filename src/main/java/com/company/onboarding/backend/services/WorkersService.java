@@ -153,6 +153,29 @@ public class WorkersService {
         return workerNames; // Return the list, empty if no workers or on failure
     }
     
+    public boolean setStatusByWorkerId(int workerId, String newStatus) {
+        String sql = "UPDATE workers SET status = ? WHERE worker_id = ?";
+        try (Connection connection = DBConfig.getConnection();
+             PreparedStatement stmt = connection.prepareStatement(sql)) {
+    
+            // Set the query parameters for newStatus and workerId
+            stmt.setString(1, newStatus);
+            stmt.setInt(2, workerId);
+    
+            // Execute the update
+            int rowsAffected = stmt.executeUpdate();
+    
+            // Check if update was successful
+            return rowsAffected > 0; // If rowsAffected > 0, the update was successful
+    
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("SQLState: " + e.getSQLState());
+            System.err.println("Error Code: " + e.getErrorCode());
+            System.err.println("Message: " + e.getMessage());
+            return false; // If an error occurs, return false
+        }
+    }
     
      public static void main(String[] args) {
           WorkersService ws = new WorkersService();
@@ -173,8 +196,8 @@ public class WorkersService {
             //   System.out.println(ws.getWorkersByTeamId(1));
 
             // System.out.println(ws.getStatusByWorkerId(1));
-            System.out.println(ws.getWorkerNameByStatus("pending"));
-
+            // System.out.println(ws.getWorkerNameByStatus("pending"));
+ws.setStatusByWorkerId(1, "completed");
      }
 }
 
