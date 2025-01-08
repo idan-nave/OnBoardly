@@ -1,3 +1,10 @@
 {
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.project.sourcePaths": [
+        "backend/servlets",
+        "backend/models",
+        "backend/controllers",
+        "src/main/java/com/company/onboarding/backend/services"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }
