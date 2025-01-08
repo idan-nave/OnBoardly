@@ -70,7 +70,6 @@ public class CompaniesService {
     }
 }
 
-
 public boolean setCompanyName(int companyId, String newCompanyName) {
     String sql = "UPDATE companies SET company_name = ? WHERE company_id = ?";
     try (Connection connection = DBConfig.getConnection();
@@ -129,7 +128,6 @@ public String getAddress(int companyId) {
         return null;
     }
 }
-
 
 public boolean setAddress(int companyId, String newAddress) {
     String sql = "UPDATE companies SET company_address = ? WHERE company_id = ?";

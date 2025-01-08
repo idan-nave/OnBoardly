@@ -197,7 +197,7 @@ public Integer getProcessIdByTeamId(int teamId) {
 
 
 public static void main(String[] args) {
-    TeamService t = new TeamService();
+    // TeamService t = new TeamService();
 
     // int teamId1 = 4;
     // int companyId = 101;
