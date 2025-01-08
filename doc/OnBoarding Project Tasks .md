@@ -58,6 +58,8 @@
 **Frontend (JavaScript) Responsibilities:**
 - `loginController.js`: Handles the frontend logic for the login page (sending login request, handling response, etc.).
 - `index.html`: General home page that welcomes users and redirects to the login or signup page.
+- `header&footer`: teach the team how to add the header and footer to their page automatically.
+- `teamDashboard.html`: Page for presenting teams list and data per team
 
 #### **2. Idan**:
 **Backend (Java) Responsibilities:**
@@ -67,7 +69,7 @@
 **Frontend (JavaScript) Responsibilities:**
 - `teamController.js`: Handles the frontend logic for the team dashboard page (viewing/editing team information).
 - `Header&Footer`: General bars for every page.
-    
+
 #### **3. Garmizo**:
 **Backend (Java) Responsibilities:**
 - `ProcessServlet.java`: Handles API requests related to onboarding processes (view/edit processes).
@@ -76,6 +78,7 @@
 **Frontend (JavaScript) Responsibilities:**
 - `processController.js`: Handles frontend logic for the process dashboard page (viewing/editing processes).
 - `login.html`**: Page for logging in to the platform.
+- `processDashboard.html`:Page for presenting processes list and data per process. add responsible person, add mandatory order.
 
 #### **4. Malki**:
 **Backend (Java) Responsibilities:**
@@ -85,6 +88,7 @@
 **Frontend (JavaScript) Responsibilities:**
 - `companyController.js`: Handles frontend logic for the company dashboard page (viewing company details and summary of processes/teams).
 - `signup.html`: Page for registering a new company user.
+- `companyDashboard.html`: Page for presenting teams and processes of the company
 
 #### **5. Shared**:
 **Frontend JavaScript**:
