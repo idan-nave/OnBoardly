@@ -13,16 +13,18 @@
             <h1>Welcome to OnBoardly</h1>
         </header>
 
-        <form action="">
-            <label for="first">Username:</label>
-            <input type="text" id="first" name="first" placeholder="Enter your Username" required>
+        <form id="loginform">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your Username" required>
 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+            <input type="password" id="loginpassword" name="password" placeholder="Enter your Password" required>
 
-            <button type="submit" id="button">Login</button>
+            <button type="submit" id="loginbutton">Login</button>
+            <div id="errorContainer" class="error-message"></div>
         </form>
     </div>
 
+    <script src="../assets/js/login.js"></script>
 </body>
 </html>

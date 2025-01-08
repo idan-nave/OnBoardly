@@ -83,21 +83,32 @@
     margin-bottom: var(--spacing-large);
   }
   
-  .cta-button {
-    padding: var(--spacing-small) var(--spacing-large);
-    font-size: var(--font-size-medium);
-    color: var(--color-white);
-    background-color: var(--color-accent);
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-  }
-  
-  .cta-button:hover {
-    background-color: var(--color-accent-hover);
-    transform: translateY(-2px);
-  }
+  /* CTA Links (Join Us & Login) */
+.cta-link {
+  display: inline-block;
+  padding: var(--spacing-small) var(--spacing-large);
+  font-size: var(--font-size-medium);
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cta-link:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+.login-link {
+  background-color: var(--color-primary-light);
+  margin: 15px;
+}
+
+.login-link:hover {
+  background-color: var(--color-accent);
+}
   
   /* Footer */
   .main-footer {

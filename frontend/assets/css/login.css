@@ -58,7 +58,7 @@ form input {
     margin-bottom: 10px;
 }
 
-#button {
+#loginbutton {
     background: linear-gradient(to right, #6A11CB, #2575FC);
     color: #fff;
     font-weight: bold;
@@ -72,6 +72,14 @@ form input {
 
 #button:hover {
     background: linear-gradient(to right, #2575FC, #6A11CB);
+}
+
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: left;
 }
 
 /* Footer (Optional) */
