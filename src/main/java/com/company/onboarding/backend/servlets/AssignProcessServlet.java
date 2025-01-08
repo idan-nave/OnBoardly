@@ -9,23 +9,32 @@ import com.company.onboarding.backend.dtos.AssignProcessDTO;
 import com.company.onboarding.backend.services.TeamService;
 import com.fasterxml.jackson.databind.ObjectMapper; // For parsing JSON
 
-@WebServlet("/assignProcess")  // Servlet mapped to /assignProcess URL
+@WebServlet("/assignProcess") // Servlet mapped to /assignProcess URL
 public class AssignProcessServlet extends HttpServlet {
 
     // Create a TeamService instance to use the business logic
     private TeamService teamService = new TeamService();
     private ObjectMapper objectMapper = new ObjectMapper(); // Reusable ObjectMapper instance
+    
+    // Override the doGet method - unsupported
+    // @Override
+    // protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    //         throws ServletException, IOException {
+    //     response.setContentType("application/json");
+    //     response.getWriter().write("{\"message\": \"GET method is not supported. Use POST instead.\"}");
+    // }
 
     // Override the doPost method to handle the POST request
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         // Set the response content type to JSON
         response.setContentType("application/json");
-        
+
         // Read the incoming JSON request body using request.getReader()
         StringBuilder sb = new StringBuilder();
         String line;
-        
+
         try (BufferedReader reader = request.getReader()) {
             while ((line = reader.readLine()) != null) {
                 sb.append(line);
@@ -46,7 +55,8 @@ public class AssignProcessServlet extends HttpServlet {
             return;
         }
 
-        // Validate the input data (e.g., teamId and processId must not be null or negative)
+        // Validate the input data (e.g., teamId and processId must not be null or
+        // negative)
         if (assignRequest.getTeamId() <= 0 || assignRequest.getProcessId() <= 0) {
             handleError(response, HttpServletResponse.SC_BAD_REQUEST, "Invalid team ID or process ID");
             return;
@@ -67,8 +77,9 @@ public class AssignProcessServlet extends HttpServlet {
 
     /**
      * Helper method to send JSON response with a message
+     * 
      * @param response The HTTP response object
-     * @param message The message to send in the response body
+     * @param message  The message to send in the response body
      * @throws IOException
      */
     private void sendResponse(HttpServletResponse response, String message) throws IOException {
@@ -78,8 +89,9 @@ public class AssignProcessServlet extends HttpServlet {
 
     /**
      * Helper method to handle error responses
-     * @param response The HTTP response object
-     * @param statusCode The HTTP status code (e.g., 400, 500)
+     * 
+     * @param response     The HTTP response object
+     * @param statusCode   The HTTP status code (e.g., 400, 500)
      * @param errorMessage The error message to include in the response
      * @throws IOException
      */

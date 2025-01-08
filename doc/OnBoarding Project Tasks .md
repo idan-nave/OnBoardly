@@ -78,7 +78,7 @@
 **Frontend (JavaScript) Responsibilities:**
 - `processController.js`: Handles frontend logic for the process dashboard page (viewing/editing processes).
 - `login.html`**: Page for logging in to the platform.
-- `processDashboard.html`:Page for presenting processes list and data per process
+- `processDashboard.html`:Page for presenting processes list and data per process. add responsible person, add mandatory order.
 
 #### **4. Malki**:
 **Backend (Java) Responsibilities:**
