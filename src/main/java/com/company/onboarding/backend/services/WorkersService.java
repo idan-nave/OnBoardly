@@ -197,7 +197,7 @@ public class WorkersService {
 
             // System.out.println(ws.getStatusByWorkerId(1));
             // System.out.println(ws.getWorkerNameByStatus("pending"));
-ws.setStatusByWorkerId(1, "completed");
+// ws.setStatusByWorkerId(1, "completed");
      }
 }
 
