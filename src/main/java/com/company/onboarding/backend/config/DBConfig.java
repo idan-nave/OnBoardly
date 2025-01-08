@@ -5,11 +5,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConfig {
-
+    // DB_URL=jdbc:mysql://localhost:3306/onboardly_db
+    // DB_USER=root
+    // DB_PASS=secretpassword
     // Get DB credentials from environment variables
-    private static final String DB_URL = System.getenv("DB_URL");
-    private static final String DB_USER = System.getenv("DB_USER");
-    private static final String DB_PASS = System.getenv("DB_PASS");
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/onboardly_db";
+    private static final String DB_USER = "root";
+    private static final String DB_PASS = "secretpassword";
 
     private static Connection connection;
 
