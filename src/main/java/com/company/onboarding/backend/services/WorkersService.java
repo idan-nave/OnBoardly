@@ -69,10 +69,10 @@ public class WorkersService {
         WorkersService ws = new WorkersService();
         
         // Define start and end dates
-        Date startDate = Date.valueOf("2025-01-08");
-        Date endDate = Date.valueOf("2025-01-11");
+        Date startDate = Date.valueOf("2025-02-08");
+        Date endDate = Date.valueOf("2025-02-19");
 
-        boolean success = ws.addWorker(6, 1, "Daniel", "pending", startDate, endDate);
+        boolean success = ws.addWorker(7, 2, "Adam", "pending", startDate, endDate);
         
         // Print the result
         System.out.println("Worker added successfully: " + success);
