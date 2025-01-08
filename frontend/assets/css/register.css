@@ -13,7 +13,8 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+  background: linear-gradient(135deg, #6A11CB, #2575FC);
+  display: flex;
 }
 
 .container {
@@ -41,7 +42,7 @@ body {
   height: 3px;
   width: 110px;
   border-radius: 5px;
-  background: linear-gradient(115deg, #56d8e4, #9f01ea);
+  background: linear-gradient(to right, #6A11CB, #2575FC);
 }
 
 .content form .user-details {
@@ -95,11 +96,11 @@ form .button input {
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: linear-gradient(115deg, #56d8e4, #9f01ea);
+  background: linear-gradient(to right, #6A11CB, #2575FC);
 }
 
 form .button input:hover {
-  background: linear-gradient(-115deg, #56d8e4, #9f01ea);
+  background: linear-gradient(to right, #2575FC, #6A11CB);
 }
 
 /* Responsive media query code for mobile devices */
@@ -135,7 +136,7 @@ form .button input:hover {
 .back-to-home a {
   text-decoration: none;
   color: #fff;
-  background: linear-gradient(135deg, #56d8e4, #9f01ea);
+  background: linear-gradient(to right, #6A11CB, #2575FC);
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
@@ -144,6 +145,5 @@ form .button input:hover {
 }
 
 .back-to-home a:hover {
-  background: linear-gradient(-135deg, #56d8e4, #9f01ea);
+  background: linear-gradient(to right, #2575FC, #6A11CB);
 }
-
