@@ -40,7 +40,10 @@ body {
 .nav-list {
     list-style: none;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .nav-list li {
@@ -139,7 +142,7 @@ body {
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
     .nav-list {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .search-bar {
