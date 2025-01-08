@@ -1,11 +1,13 @@
+package com.company.onboarding.backend.servlets;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class AssignProcessServlet extends HttpServlet {
+public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Process request
+        // Handle user login
         PrintWriter out = response.getWriter();
-        out.println("Process Assigned Successfully");
+        out.println("User logged in successfully");
     }
 }

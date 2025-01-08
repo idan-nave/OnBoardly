@@ -87,13 +87,15 @@ CREATE TABLE users (
     FOREIGN KEY (company_id) REFERENCES companies(company_id)
 );
 
--- Table for Teams
+-- Table for Teams (Each team has one process)
 CREATE TABLE teams (
     team_id INT AUTO_INCREMENT PRIMARY KEY,
     company_id INT,
     team_name VARCHAR(255) NOT NULL,
+    process_id INT,  -- Foreign key for the process assigned to the team
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (company_id) REFERENCES companies(company_id)
+    FOREIGN KEY (company_id) REFERENCES companies(company_id),
+    FOREIGN KEY (process_id) REFERENCES processes(process_id)  -- Link to processes table
 );
 
 -- Table for Processes
@@ -124,6 +126,7 @@ CREATE TABLE stages (
     order_number INT,
     FOREIGN KEY (process_id) REFERENCES processes(process_id)
 );
+
 ```
 
 This setup creates all the necessary tables for tracking **companies**, **teams**, **users**, **processes**, **workers**, and **stages**.
