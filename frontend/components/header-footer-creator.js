@@ -144,7 +144,5 @@ function createFooter() {
 }
 
 // Call the functions to create header and footer
-document.addEventListener('DOMContentLoaded', () => {
-    createHeader();
-    createFooter();
-});
+createHeader();
+createFooter();

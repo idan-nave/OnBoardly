@@ -8,14 +8,15 @@ body {
     align-items: center;
     color: #333;
     text-align: center; /* Center text content globally */
+    min-height: 100vh;
 }
 
 .container {
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    width: 50%;
-    height: 50vh; /* Take 80% of the vertical height */
+    width: 30%;
+    height: 30vh; /* Take 80% of the vertical height */
     max-width: 1400px; /* Ensure it doesn't get too wide */
     padding: 40px; /* Increase padding for better spacing */
     text-align: center; /* Center text inside the container */
@@ -49,10 +50,11 @@ button {
     background: linear-gradient(to right, #2575FC, #6A11CB);
     color: #fff;
     border: none;
+    margin-top: 20px;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%; /* Makes the button full width */
-    box-sizing: border-box; /* Ensures padding is included in the button's total width */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* button:hover {
@@ -89,5 +91,5 @@ li button {
 }
 
 li button:hover {
-    background-color: #e53935;
+    background-color: #e53935;
 }
