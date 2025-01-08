@@ -1,0 +1,39 @@
+/* Add this to your existing styles.css */
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 80%;
+}
+
+.form-group select {
+    font-size: 1.2rem;
+}
+
+/* Cancel Button */
+#cancel-btn {
+    background-color: #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#cancel-btn:hover {
+    background-color: #aaa;
+}
