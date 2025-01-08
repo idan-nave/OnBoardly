@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Users/dnylgrmyzw/Desktop/לוחמים להייטק/akaton/OnBoardly/frontend/assets/css/proccess.css">
     <title>Document</title>
+    <link rel="stylesheet" href="/frontend/assets/css/proccess.css">
 </head>
 <body>
-    
-<div id="container">
-    <div id="title">
-    <h1 id="proccess">Create a proccess</h1>
-</div>
-<div id="stages">
-   
-</div>
-</div>
 
+    <div class="container">
+        
+        <header id="title">
+            <h1>Create a Process</h1>
+            <p>Fill in the details to create a new process</p>
+        </header>
+        
+        <div id="stages">
+            <label for="stage-one">Stage 1:</label>
+            <input type="text" id="stage-one" placeholder="Enter your stage">
+            <button type="button" id="button">+</button>
+        </div>
+
+        
+        <div id="result"></div>
+
+    </div> 
+
+    <script src="/frontend/assets/js/proccess.js"></script>  <!-- אל תשכח לכלול את קובץ ה-JS -->
 
 </body>
 </html>
