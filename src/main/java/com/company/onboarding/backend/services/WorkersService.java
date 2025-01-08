@@ -65,22 +65,22 @@ public class WorkersService {
         return names; // Return the list, empty if no workers or on failure
     }
 
-    public static void main(String[] args) {
-        WorkersService ws = new WorkersService();
+    // public static void main(String[] args) {
+    //     WorkersService ws = new WorkersService();
         
-        // Define start and end dates
-        Date startDate = Date.valueOf("2025-02-08");
-        Date endDate = Date.valueOf("2025-02-19");
+    //     // Define start and end dates
+    //     Date startDate = Date.valueOf("2025-02-08");
+    //     Date endDate = Date.valueOf("2025-02-19");
 
-        boolean success = ws.addWorker(7, 2, "Adam", "pending", startDate, endDate);
+    //     boolean success = ws.addWorker(7, 2, "Adam", "pending", startDate, endDate);
         
-        // Print the result
-        System.out.println("Worker added successfully: " + success);
+    //     // Print the result
+    //     System.out.println("Worker added successfully: " + success);
 
-        ArrayList<String> a =  ws.getAllWorkerNames();
-        for(int i = 0; i < a.size(); i++){
-            System.out.println(a.get(i));
-        }
-    }
+    //     ArrayList<String> a =  ws.getAllWorkerNames();
+    //     for(int i = 0; i < a.size(); i++){
+    //         System.out.println(a.get(i));
+    //     }
+    // }
 }
 
