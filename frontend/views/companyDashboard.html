@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../assets/css/companyDashboard.css"> </head>
+    <link rel="stylesheet" href="../assets/css/companyDashboard.css">
 </head>
 <body>
-
     <div class="container"> 
         <h1>DASHBOARD</h1> 
         <div class="content-section"> 
+            <!-- Teams Section -->
             <div class="left-container">
                 <h2>Teams</h2>
                 <ul>
@@ -19,9 +19,13 @@
                     <li>Team Gamma</li>
                     <li>Team Delta</li>
                 </ul>
-                <button class="add-button">Add Team</button> 
+                <div class="button-group">
+                    <button class="add-button">Add Team</button>
+                    <button class="edit-button">Edit Team</button>
+                </div>
             </div>
 
+            <!-- Processes Section -->
             <div class="right-container">
                 <h2>Processes</h2>
                 <ul>
@@ -30,10 +34,9 @@
                     <li>Evaluation</li>
                     <li>Feedback</li>
                 </ul>
-                <button class="add-button">Add Process</button> 
+                <button class="add-button">Add Process</button>
             </div>
         </div>
     </div>
-
 </body>
 </html>
