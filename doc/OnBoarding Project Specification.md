@@ -711,7 +711,7 @@ CREATE TABLE teams (
 
 - **Frontend (JavaScript and HTML)**:
   - `/frontend/views/teamDashboard.html`: HTML page with dropdown and button for assigning a process.
-  - `/frontend/js/teamController.js`: JavaScript that sends the POST request to the backend.
+  - `/frontend/controllers/teamController.js`: JavaScript that sends the POST request to the backend.
 
 - **Backend (Java Classes and Servlets)**:
   - **Models**: 
