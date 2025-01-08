@@ -22,4 +22,18 @@ public class TeamService {
             return false; // If an error occurs, return false
         }
     }
+
+    public static void main(String[] args) {
+        TeamService teamService = new TeamService();
+
+        // Test with valid teamId and processId
+        boolean result = teamService.assignProcessToTeam(1, 101);
+
+        // Print the result
+        if (result) {
+            System.out.println("Process successfully assigned to the team!");
+        } else {
+            System.out.println("Failed to assign process to the team.");
+        }
+    }
 }
