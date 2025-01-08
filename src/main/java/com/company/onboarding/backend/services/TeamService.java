@@ -128,6 +128,74 @@ public boolean setTeamName(int teamId, String newTeamName) {
 }
 
 
+public Integer getTeamIdByProcessId(int processId) {
+    String sql = "SELECT team_id FROM teams WHERE process_id = ?";
+
+    try (Connection connection = DBConfig.getConnection();
+         PreparedStatement stmt = connection.prepareStatement(sql)) {
+
+        // Debugging connection
+        System.out.println("Connection Test: " + connection);
+
+        // Set the query parameter for process_id
+        stmt.setInt(1, processId);
+
+        // Execute the query
+        try (ResultSet resultSet = stmt.executeQuery()) {
+            if (resultSet.next()) {
+                // Retrieve and return the team_id
+                return resultSet.getInt("team_id");
+            } else {
+                // No team found with the given process_id
+                System.err.println("No team found with process_id: " + processId);
+                return null;
+            }
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        System.err.println("SQLState: " + e.getSQLState());
+        System.err.println("Error Code: " + e.getErrorCode());
+        System.err.println("Message: " + e.getMessage());
+        return null;
+    }
+}
+
+
+public Integer getProcessIdByTeamId(int teamId) {
+    String sql = "SELECT process_id FROM teams WHERE team_id = ?";
+
+    try (Connection connection = DBConfig.getConnection();
+         PreparedStatement stmt = connection.prepareStatement(sql)) {
+
+        // Debugging connection
+        System.out.println("Connection Test: " + connection);
+
+        // Set the query parameter for team_id
+        stmt.setInt(1, teamId);
+
+        // Execute the query
+        try (ResultSet resultSet = stmt.executeQuery()) {
+            if (resultSet.next()) {
+                // Retrieve and return the process_id
+                return resultSet.getInt("process_id");
+            } else {
+                // No process found with the given team_id
+                System.err.println("No process found with team_id: " + teamId);
+                return null;
+            }
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        System.err.println("SQLState: " + e.getSQLState());
+        System.err.println("Error Code: " + e.getErrorCode());
+        System.err.println("Message: " + e.getMessage());
+        return null;
+    }
+}
+
+
 public static void main(String[] args) {
     TeamService t = new TeamService();
 
@@ -141,6 +209,8 @@ public static void main(String[] args) {
     // t.addTeam(teamId1, companyId, companyName1, process_id, createdAt1);
     // System.out.println(t.getTeamName(1));
 // t.setTeamName(4, "ZIM Digital");
+// System.out.println(t.getTeamIdByProcessId(1));
+// System.out.println(t.getProcessIdByTeamId(2));
 
 }
 }
