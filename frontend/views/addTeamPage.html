@@ -19,41 +19,15 @@
 
     <label for="companyManager">Team's process:</label>
     <select id="process" name="choose ">
-        <option value="1"> </option>
-        <option value="2">Process1</option>
-        <option value="3">Process2</option>
-        <option value="4">Process3</option>
-        <option value="5">Process4</option>
-        <option value="6">Process5</option>
     </select>
 
     <button id="add-team">  Add Team  </button>
 
-    <!-- <h3>Workers List</h3>
-    <ul id="workers-list"> -->
-        <!-- Workers will be added here -->
-    <!-- </ul> -->
-
-    <!-- <label for="workerName">Add Worker:</label>
-    <input type="text" id="workerName" placeholder="Enter worker's name">
-    <button onclick="addWorker()">Add Worker</button> -->
 </div>
 
-<script>
-    // Function to add worker to the list
-    // function addWorker() {
-    //     var workerName = document.getElementById('workerName').value;
-    //     if (workerName) {
-    //         var ul = document.getElementById('workers-list');
-    //         var li = document.createElement('li');
-    //         li.textContent = workerName;
-    //         ul.appendChild(li);
-    //         document.getElementById('workerName').value = '';  // Clear the input field
-    //     } else {
-    //         alert('Please enter a worker\'s name!');
-    //     }
-    // }
-</script>
+<script src="../controllers/teamControllerGroup/addTeamController.js"></script>
+<script src="../controllers/teamControllerGroup/populateProcessesList.js"></script>
+
 
 </body>
 </html>
