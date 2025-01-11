@@ -1,0 +1,72 @@
+.header {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header h1 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header .logo {
+  height: 40px;  /* Standardized logo height */
+  margin-right: 10px;  /* Space between logo and text */
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.nav li {
+  display: inline;
+}
+
+.nav a {
+  color: #ecf0f1;
+  text-decoration: none; /* Ensure no underline is visible */
+  font-weight: bold;
+}
+
+/* Remove color change for visited links */
+.nav a:visited, a:visited  {
+  color: #ecf0f1; /* Keep the same color as unvisited */
+  text-decoration: none; /* No underline on hover */
+}
+
+
+/* Remove underline when hovered */
+.nav a:hover, a:hover   {
+  text-decoration: none; /* No underline on hover */
+}
+
+/* Added styles for the login/user button */
+.user-btn {
+  background-color: #2980b9;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.user-btn:hover {
+  background-color: #3498db;
+}

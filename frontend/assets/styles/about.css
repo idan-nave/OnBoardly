@@ -84,6 +84,8 @@ body {
 
 .about-section {
     margin-bottom: var(--spacing-large);
+    background-color: #5c8ab8;
+
 }
 
 .about-section h2 {
