@@ -60,6 +60,17 @@ const createDropdown = (labelText, inputName, options) => {
   return formGroup;
 };
 
+// Helper function to validate the duration (days) input
+const validateDuration = (inputElement) => {
+  const value = parseInt(inputElement.value, 10);
+  if (isNaN(value) || value <= 0) {
+    inputElement.style.borderColor = "red"; // Highlight invalid input
+    return false;
+  }
+  inputElement.style.borderColor = ""; // Reset to default border color
+  return true;
+};
+
 // Main AddProcessPage function
 export const AddProcessPage = () => {
   const container = document.createElement("div");
@@ -162,6 +173,12 @@ export const AddProcessPage = () => {
       `stage${index}Duration`,
       `Enter duration for stage ${index}`
     );
+    duration.querySelector("input").setAttribute("min", "1"); // Ensure only positive numbers are allowed
+
+    // Add event listener for duration input validation
+    duration.querySelector("input").addEventListener("input", (event) => {
+      validateDuration(event.target); // Validate as user types
+    });
 
     const managerOptions = [
       { value: "n/a", label: "N/A" },
@@ -214,19 +231,35 @@ export const AddProcessPage = () => {
 
   // Function to show the modal
   const handleSubmit = () => {
-    const onConfirm = () => {
-      // Proceed with the submit process (e.g., form submission)
-      console.log("Process submitted");
-    };
+    // Get all duration inputs
+    const durationInputs = document.querySelectorAll('input[name^="stage"][name$="Duration"]');
+    
+    // Check each duration field for validity
+    let isValid = true;
+    durationInputs.forEach((input) => {
+      if (!validateDuration(input)) {
+        isValid = false; // If any input is invalid, prevent submission
+      }
+    });
 
-    const onCancel = () => {
-      console.log("Process submission cancelled");
-    };
+    // Proceed if all durations are valid
+    if (isValid) {
+      const onConfirm = () => {
+        // Proceed with the submit process (e.g., form submission)
+        console.log("Process submitted");
+      };
 
-    // Create the modal and append it to the body
-    const modal = createSubmitModal(onConfirm, onCancel);
-    document.body.appendChild(modal);
-    modal.classList.add("show"); // Show the modal
+      const onCancel = () => {
+        console.log("Process submission cancelled");
+      };
+
+      // Create the modal and append it to the body
+      const modal = createSubmitModal(onConfirm, onCancel);
+      document.body.appendChild(modal);
+      modal.classList.add("show"); // Show the modal
+    } else {
+      alert("Please ensure that all durations are valid and greater than 0.");
+    }
   };
 
   // Create the submit button and add the handleSubmit logic

@@ -1,5 +1,3 @@
-// import '../styles/profileNav.css'; // Make sure the styles are loaded
-
 // ProfileNav Component with Logo, Navigation, and Categories for Logged-in Users
 export const ProfileNav = () => {
   const headerElement = document.createElement('profile-nav-hdr');
@@ -26,11 +24,10 @@ export const ProfileNav = () => {
   const ul = document.createElement('ul');
   ul.classList.add('nav');
 
-  // Categories for logged-in users
+  // Categories for logged-in users (removed 'Stages Pool')
   const categories = [
     { name: 'Departments', href: '#/departments' },
     { name: 'Onboarding Processes', href: '#/processes' },
-    { name: 'Stages Pool', href: '#/stages' },
     { name: 'Managers', href: '#/managers' },
     { name: 'Incoming Employees', href: '#/employees' },
     { name: 'Management Users', href: '#/management-users' }
@@ -42,7 +39,50 @@ export const ProfileNav = () => {
     const anchor = document.createElement('a');
     anchor.href = category.href;
     anchor.textContent = category.name;
+    
+    // Create buttons for edit, view, and add actions
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('nav-button-container');
+    
+    const editButton = document.createElement('button');
+    editButton.classList.add('nav-action-button', 'nav-edit-button');
+    editButton.innerHTML = '✏️';  // Pencil icon for edit
+    editButton.onclick = () => {
+      window.location.href = category.href;
+    };
+
+    const viewButton = document.createElement('button');
+    viewButton.classList.add('nav-action-button', 'nav-view-button');
+    viewButton.innerHTML = '👁️';  // Eye icon for view
+    viewButton.onclick = () => {
+      window.location.href = category.href;
+    };
+
+    const addButton = document.createElement('button');
+    addButton.classList.add('nav-action-button', 'nav-add-button');
+    addButton.innerHTML = '➕';  // Plus icon for add
+    addButton.onclick = () => {
+      window.location.href = `${category.href}/new`;
+    };
+
+    buttonContainer.appendChild(viewButton);
+    buttonContainer.appendChild(addButton);
+    buttonContainer.appendChild(editButton);
+
+    // Initially hide the buttons
+    buttonContainer.style.display = 'none';
+
+    // Show buttons on hover
+    li.addEventListener('mouseenter', () => {
+      buttonContainer.style.display = 'flex';
+    });
+
+    li.addEventListener('mouseleave', () => {
+      buttonContainer.style.display = 'none';
+    });
+
     li.appendChild(anchor);
+    li.appendChild(buttonContainer);  // Add the button container after the link
     ul.appendChild(li);
   });
 

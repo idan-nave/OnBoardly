@@ -31,6 +31,7 @@
 
 .nav li {
   margin: 0 15px;
+  position: relative;  /* Needed to position the buttons below the category */
 }
 
 .nav a {
@@ -40,4 +41,46 @@
 
 .nav a:hover {
   color: #ff9800;
+}
+
+/* Buttons for actions (edit, view, add) */
+.nav-button-container {
+  display: none;  /* Initially hide the buttons */
+  gap: 10px;
+  position: absolute;
+  top: 100%;  /* Position below the category */
+  left: 0;
+  margin-top: 0px;
+  justify-content: flex-start; /* Align buttons in a row */
+  flex-direction: row; /* Ensure they are displayed in a row */
+}
+
+/* Style for each button */
+.nav-action-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 5px;
+  width: 40px;  /* Set a fixed width to keep buttons small */
+  height: 40px;  /* Set a fixed height to keep buttons small */
+  border-radius: 50%;  /* Round buttons */
+  text-align: center;
+}
+
+.nav-view-button {
+  background-color: #ffeb3b;  /* Yellow background for view */
+}
+
+.nav-add-button {
+  background-color: #4caf50;  /* Green background for add */
+}
+
+.nav-edit-button {
+  background-color: #f44336;  /* Red background for edit */
+}
+
+.action-button:hover {
+  opacity: 0.8;  /* Slightly dim buttons on hover */
 }
