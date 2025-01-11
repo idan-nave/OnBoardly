@@ -21,21 +21,21 @@ export const ProfilePage = () => {
     leftTitle.textContent = 'Teams';
     leftContainer.appendChild(leftTitle);
   
-    const teamList = document.createElement('ul');
-    const teams = ['Team Alpha', 'Team Beta', 'Team Gamma', 'Team Delta'];
-    teams.forEach(team => {
-      const teamItem = document.createElement('li');
-      teamItem.textContent = team;
-      teamList.appendChild(teamItem);
+    const departmentList = document.createElement('ul');
+    const departments = ['Department Alpha', 'Department Beta', 'Department Gamma', 'Department Delta'];
+    departments.forEach(department => {
+      const departmentItem = document.createElement('li');
+      departmentItem.textContent = department;
+      departmentList.appendChild(departmentItem);
     });
-    leftContainer.appendChild(teamList);
+    leftContainer.appendChild(departmentList);
   
-    // Add Team Button
+    // Add Department Button
     const addTeamLink = document.createElement('a');
     addTeamLink.href = 'addTeamPage.html';
     const addButton = document.createElement('button');
     addButton.classList.add('add-button');
-    addButton.textContent = 'Add Team';
+    addButton.textContent = 'Add Department';
     addTeamLink.appendChild(addButton);
     leftContainer.appendChild(addTeamLink);
   

@@ -3,9 +3,9 @@ document
   .getElementById("assignProcessBtn")
   .addEventListener("click", function () {
     const processId = document.getElementById("processSelect").value;
-    const teamId = 1; // Example team ID
+    const teamId = 1; // Example department ID
 
-    // Sending POST request to the backend API to assign the process to the team
+    // Sending POST request to the backend API to assign the process to the department
     fetch("/assignProcess", {
       method: "POST",
       headers: {

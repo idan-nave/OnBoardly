@@ -1,0 +1,46 @@
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden; /* Hidden by default */
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal-footer {
+  margin-top: 20px;
+}
+
+.modal-footer button {
+  margin: 0 5px;
+  padding: 8px 20px;
+  font-size: 14px;
+}
+
+.modal-footer .cancel-button {
+  background-color: #ccc;
+}
+
+.modal-footer .confirm-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* Show the modal when it's active */
+.modal.show {
+  visibility: visible;
+}

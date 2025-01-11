@@ -28,8 +28,8 @@ export const ProfileNav = () => {
 
   // Categories for logged-in users
   const categories = [
-    { name: 'Teams', href: '#/teams' },
-    { name: 'Onboarding Processes', href: '#/onboarding' },
+    { name: 'Departments', href: '#/departments' },
+    { name: 'Onboarding Processes', href: '#/processes' },
     { name: 'Stages Pool', href: '#/stages' },
     { name: 'Managers', href: '#/managers' },
     { name: 'Incoming Employees', href: '#/employees' },

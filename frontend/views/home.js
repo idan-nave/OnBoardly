@@ -27,7 +27,7 @@ const createHeading = () => {
 // Helper function to create the paragraph
 const createParagraph = () => {
   const paragraph = document.createElement('p');
-  paragraph.textContent = 'Your partner in simplifying onboarding and enhancing team collaboration.';
+  paragraph.textContent = 'Your partner in simplifying onboarding and enhancing department collaboration.';
   return paragraph;
 };
 
