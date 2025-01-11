@@ -1,25 +1,76 @@
+/* Root Variables */
+:root {
+  --color-primary:  #6A11CB;
+  --color-primary-light: #2575FC;
+  --color-accent: #000000;
+  --color-accent-hover: #041804;
+  --color-background: #f9f9f92c;
+  --color-text: #333;
+  --color-white: #fff;
+  --color-card-bg: #f1f4f9; /* Subtle tinted background for cards */
+  --color-border: #d1d5db; /* Light gray for borders */
+  --color-dark: #0a0a0a; /* Darker background for accents */
+  --color-muted-blue: #5C6BC0; /* Soft blue for text */
+  --color-light-blue: #A7C5E1; /* Light blue accents */
+
+  --font-size-small: 0.875rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 1.5rem;
+  --font-size-xlarge: 2.5rem;
+
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+  --spacing-xlarge: 5rem;
+
+  --border-radius: 12px; /* Slightly larger rounding for elegance */
+  --transition: all 0.3s ease-in-out;
+  --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Softer shadow */
+}
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, var(--color-primary-light), var(--color-primary));
+  color: var(--color-text);
+}
+
 /* Neutralize layout container's styling from affecting child content */
 .layout-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  position: relative;  /* Ensures background video does not interfere */
-  z-index: 1; /* Ensure layout content stays above the background video */
-  background-color: transparent;  /* Make sure the background of the layout container is transparent */
+  position: relative; /* Required for pseudo-elements to work properly */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent scrollbars for overflowing content */
+  z-index: 1;
+  background-color: transparent;
+  padding: 10px;
 }
 
-/* Content container should have limited and optional styles */
 .content-container {
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
-  background: transparent;  /* Transparent to allow child elements to have their background */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  background: var(--color-card-bg); /* Subtle card background */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: 1px solid var(--color-border); /* Light border for cards */
+  color: var(--color-dark); /* Text color for the content */
+  
+  /* Enable scrolling for overflowing content */
+  overflow: auto; /* Allows both horizontal and vertical scrolling */
+  max-height: 90vh; /* Optional: Set a height limit to trigger scrolling */
 }
 
-/* If you want to have a background video or an image, 
-   it should be applied to the layout or background section directly, not the main content */
+
+/* Layout container for background video */
 .layout-container::before {
   content: '';
   position: absolute;
@@ -28,16 +79,85 @@
   width: 100%;
   height: 100%;
   background: url('#../assets/media/videos/hero.mp4') no-repeat center center / cover;
-  z-index: -1; /* Keeps the background behind content */
+  z-index: -1;
 }
 
-/* Ensure background video styling is applied separately */
+/* Background video styling */
 .background-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* Ensures the video covers the entire background */
-  z-index: -1;  /* Keeps video behind content */
+  object-fit: cover;  /* Ensures video covers the full screen */
+  z-index: -1;
+}
+
+/* Header Section */
+h1, h2, h3 {
+  color: var(--color-white);
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Links styling */
+a {
+  color: var(--color-primary-light);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Buttons with hover effect */
+button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--color-primary-light);
+}
+
+/* Cards and containers for each feature */
+.feature-container {
+  cursor: pointer;
+  padding: var(--spacing-small);
+  background-color: var(--color-card-bg);
+  border-radius: 8px;
+  transition: background-color 0.3s ease-in-out;
+  border: 1px solid var(--color-border);
+}
+
+.feature-container:hover {
+  background-color: var(--color-muted-blue); /* Soft blue hover for features */
+}
+
+.feature-link {
+  display: block;
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.feature-link:hover {
+  color: var(--color-primary-light);
+}
+
+.feature-content {
+  margin-top: var(--spacing-small);
+  color: var(--color-dark);
+  padding-left: var(--spacing-medium);
+  font-size: 14px;
+  transition: all 0.3s ease-in-out;
 }

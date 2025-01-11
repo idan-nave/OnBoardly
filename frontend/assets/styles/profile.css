@@ -1,34 +1,11 @@
-/* Root Variables */
-:root {
-    --color-primary: #004085;
-    --color-primary-light: #0069d9;
-    --color-accent: #28a745;
-    --color-accent-hover: #218838;
-    --color-background: #f9f9f9;
-    --color-text: #333;
-    --color-white: #fff;
-    --color-card-bg: #f1f4f9; /* Subtle tinted background for cards */
-    --color-border: #d1d5db; /* Light gray for borders */
-}
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(to bottom right, var(--color-primary-light), var(--color-primary));
-}
-
-.container {
+/* Profile Container */
+.profile-container {
     background-color: var(--color-white);
     border-radius: 12px;
     width: 80%;
     height: 80vh;
     max-width: 1400px;
+    margin: auto;
     padding: 40px;
     text-align: center;
     display: flex;
@@ -36,6 +13,7 @@ body {
     justify-content: space-between;
 }
 
+/* Heading Styles */
 h1 {
     text-align: center;
     font-size: 3rem;
@@ -43,6 +21,7 @@ h1 {
     color: var(--color-text);
 }
 
+/* Content Section */
 .content-section {
     display: flex;
     justify-content: space-around;
@@ -53,10 +32,10 @@ h1 {
 .left-container, .right-container {
     width: 45%;
     padding: 20px;
-    border: 1px solid var(--color-border); /* Subtle border */
+    border: 1px solid var(--color-border);
     border-radius: 8px;
-    background-color: var(--color-card-bg); /* Subtle tinted background */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Elegant shadow effect */
+    background-color: var(--color-card-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
@@ -64,10 +43,11 @@ h1 {
 }
 
 .left-container:hover, .right-container:hover {
-    transform: translateY(-3px); /* Gentle float effect on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly enhanced shadow on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Section Heading */
 h2 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -75,6 +55,7 @@ h2 {
     text-transform: uppercase;
 }
 
+/* List Styles */
 ul {
     list-style-type: none;
     padding: 0;
@@ -99,9 +80,9 @@ li:hover {
 /* Button Group */
 .button-group {
     display: flex;
-    gap: 15px; /* Space between buttons */
-    margin-top: 20px; /* Space above the buttons */
-    justify-content: center; /* Center align the buttons */
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
 }
 
 /* Buttons */

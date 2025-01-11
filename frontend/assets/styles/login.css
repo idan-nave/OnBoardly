@@ -1,21 +1,6 @@
 /* General Styles */
-
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6A11CB, #2575FC);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #333;
-    text-align: center;
-    height: 100vh; /* Ensure full viewport height */
-}
-
-.container {
-    background-color: #fff;
+.login-container {
+    /* background-color: var(--color-white); */
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     width: 100%;
@@ -24,6 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center elements horizontally */
+    background-color: var(--color-card-bg); /* Soft background */
 }
 
 form {
@@ -35,14 +21,14 @@ form {
 
 form label {
     font-size: 1.2rem;
-    color: #333;
+    color: var(--color-primary);
     font-weight: bold;
     text-align: left; /* Align text to the left */
 }
 
 form input {
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-border);
     border-radius: 8px;
     font-size: 1.2rem;
     width: 100%; /* Make input fill the container */
@@ -50,8 +36,8 @@ form input {
 }
 
 #loginbutton {
-    background: linear-gradient(to right, #6A11CB, #2575FC);
-    color: #fff;
+    background: linear-gradient(to right, var(--color-primary), var(--color-primary-light));
+    color: var(--color-white);
     font-weight: bold;
     padding: 15px;
     font-size: 1.2rem;
@@ -59,6 +45,11 @@ form input {
     cursor: pointer;
     width: 100%; /* Make the button width fill the container */
     border: none;
+    transition: background 0.3s ease;
+}
+
+#loginbutton:hover {
+    background: linear-gradient(to right, var(--color-primary-light), var(--color-primary));
 }
 
 .error-message {
@@ -69,20 +60,20 @@ form input {
 }
 
 /* Header and Footer styles integrated from previous example */
-.header {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    background-color: #333; 
-    color: #fff; 
-    padding: 20px 0; 
-    width: 100%; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 20px 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.header .container {
+.login-header .login-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -112,7 +103,7 @@ form input {
 }
 
 .nav-link {
-    color: #fff;
+    color: var(--color-white);
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s;
@@ -143,61 +134,3 @@ form input {
     border-radius: 4px;
     cursor: pointer;
 }
-
-.footer {
-    background-color: #2c3e50;
-    color: #ecf0f1;
-    padding: 40px 0;
-    width: 100%;
-    position: relative;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-section {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.footer-section h4 {
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.footer-links,
-.social-media-list {
-    list-style: none;
-}
-
-.footer-link,
-.social-link {
-    color: #ecf0f1;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.footer-link:hover,
-.social-link:hover {
-    color: #f39c12;
-}
-
-.footer-bottom {
-    text-align: center;
-    background-color: #34495e;
-    padding: 20px 0;
-}
-
-.footer-email {
-    color: #f39c12;
-    text-decoration: none;
-}
-
-.footer-phone {
-    font-weight: bold;
-}
-

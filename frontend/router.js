@@ -3,6 +3,7 @@ import { HomePage } from './views/home.js';
 import { LoginPage } from './views/login.js';
 import { RegisterPage } from './views/register.js';
 import { AboutPage } from './views/about.js';
+import { ProfilePage } from './views/profile.js';
 
 // Define routes and the components to render for each
 const routes = {
@@ -10,6 +11,7 @@ const routes = {
   '/login': LoginPage,
   '/register': RegisterPage,
   '/about': AboutPage,
+  '/profile': ProfilePage,
 };
 
 // Create background video (local video file)

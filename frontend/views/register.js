@@ -1,7 +1,7 @@
-// login.js - Controller for the login form
+// register.js
 export const RegisterPage = () => {
   const container = document.createElement('div');
-  container.classList.add('container');
+  container.classList.add('register-container');
 
   // Title
   const title = document.createElement('div');
@@ -72,20 +72,6 @@ export const RegisterPage = () => {
   errorMessage.style.textAlign = 'center';
   errorMessage.style.marginTop = '10px';
   form.appendChild(errorMessage);
-
-  // Back to home link
-  const backToHomeContainer = document.createElement('div');
-  backToHomeContainer.classList.add('back-to-home');
-  form.appendChild(backToHomeContainer);
-
-  const backToHomeLink = document.createElement('a');
-  backToHomeLink.href = '#';
-  backToHomeLink.textContent = 'Back to Home';
-  backToHomeLink.addEventListener('click', (event) => {
-    event.preventDefault();
-    import('../assets/router.js').then((module) => module.navigateTo('/'));
-  });
-  backToHomeContainer.appendChild(backToHomeLink);
 
   // Form submission handling
   form.addEventListener('submit', (event) => {

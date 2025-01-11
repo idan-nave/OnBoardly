@@ -1,0 +1,43 @@
+.profile-nav-hdr {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+}
+
+.profile-nav-hdr .container {
+  display: flex;
+  justify-content: space-between;  /* Ensures the logo and nav are spaced apart */
+  align-items: center;  /* Vertically centers the logo and nav */
+}
+
+.profile-nav-hdr .logo {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.profile-nav-hdr h1 {
+  font-size: 1.8em;
+  color: #fff;
+  display: flex;  /* To align logo and text horizontally */
+  align-items: center;  /* Center logo and text vertically */
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  display: flex;  /* Align the links in a row */
+}
+
+.nav li {
+  margin: 0 15px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav a:hover {
+  color: #ff9800;
+}

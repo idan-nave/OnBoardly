@@ -17,7 +17,7 @@ body {
   display: flex;
 }
 
-.container {
+.register-container {
   max-width: 700px;
   width: 100%;
   background-color: transparent;
@@ -26,14 +26,14 @@ body {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
-.container .title {
+.register-container .title {
   font-size: 25px;
   font-weight: 500;
   position: relative;
   text-align: center;
 }
 
-.container .title::before {
+.register-container .title::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -105,7 +105,7 @@ form .button input:hover {
 
 /* Responsive media query code for mobile devices */
 @media(max-width: 584px) {
-  .container {
+  .register-container {
     max-width: 100%;
   }
 
@@ -126,24 +126,4 @@ form .button input:hover {
     text-align: center;
     display: none; /* Initially hidden */
   }
-}
-
-.back-to-home {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.back-to-home a {
-  text-decoration: none;
-  color: #fff;
-  background: linear-gradient(to right, #6A11CB, #2575FC);
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.back-to-home a:hover {
-  background: linear-gradient(to right, #2575FC, #6A11CB);
 }

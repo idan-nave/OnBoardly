@@ -3,7 +3,7 @@
 export const LoginPage = () => {
   // Create a container for the login page
   const container = document.createElement("div");
-  container.classList.add("login-page-container"); // Optional class for styling
+  container.classList.add("login-container"); // Optional class for styling
 
   // Create the form
   const form = document.createElement("form");

@@ -66,12 +66,12 @@ header, footer {
   font-size: 1.2rem;
   text-decoration: none;
   color: #fff;
-  background: #ff6b6b;
+  background: var(--color-primary);
   border-radius: 5px;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .cta-link:hover {
-  background: #ff7f50;
+  background: var(--color-background);
   transform: scale(1.05);
 }
