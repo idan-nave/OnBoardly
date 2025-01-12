@@ -18,7 +18,7 @@ export const ProfilePage = () => {
     contentSection.appendChild(leftContainer);
   
     const leftTitle = document.createElement('h2');
-    leftTitle.textContent = 'Teams';
+    leftTitle.textContent = 'Departments';
     leftContainer.appendChild(leftTitle);
   
     const departmentList = document.createElement('ul');

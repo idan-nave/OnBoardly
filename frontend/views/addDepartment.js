@@ -105,7 +105,7 @@ const handleSubmit = () => {
 // Create the submit button and add the handleSubmit logic
 const submitButton = document.createElement("button");
 submitButton.type = "button";
-submitButton.textContent = "Submit Process";
+submitButton.textContent = "Submit Department";
 submitButton.classList.add("submit-button");
 submitButton.onclick = handleSubmit;
 

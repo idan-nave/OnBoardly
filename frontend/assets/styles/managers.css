@@ -1,0 +1,46 @@
+
+.managers-page-container {
+    padding: 20px;
+  }
+  
+  .manager-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .manager-table th,
+  .manager-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .manager-table th {
+    background-color: var(--color-primary);
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .manager-table th .sort-arrow {
+    font-size: 1.5em;
+    margin-left: 10px;
+    color: var(--color-accent);
+  }
+  
+  .manager-table th:hover {
+    background-color: var(--color-primary-dark);
+  }
+  
+  .manager-table tbody tr {
+    cursor: pointer;
+  }
+  
+  .manager-table tbody tr:hover {
+    background-color: #e6f7ff; /* Light blue hover effect */
+  }
+  
+  .manager-table td:hover {
+    background-color: #f9f9f9; /* Light gray hover effect for cells */
+  }
+  

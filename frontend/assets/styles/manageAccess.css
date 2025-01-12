@@ -1,0 +1,29 @@
+.manager-access-container {
+  padding: 20px;
+}
+
+.access-control-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.access-control-table th,
+.access-control-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.access-control-table th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.access-control-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.access-control-table input[type="checkbox"] {
+  transform: scale(1.2);
+}

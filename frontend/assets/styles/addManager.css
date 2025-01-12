@@ -1,35 +1,4 @@
-/* Reusable Styles Palette */
-:root {
-    /* Colors For use in the App */
-    --color-primary: #004085;
-    --color-primary-light: #0069d9;
-    --color-accent: #28a745;
-    --color-accent-hover: #218838;
-    --color-background: #f9f9f9;
-    --color-text: #333;
-    --color-white: #fff;
 
-    /* Font Sizes */
-    --font-size-small: 0.875rem;
-    --font-size-medium: 1rem;
-    --font-size-large: 1.5rem;
-    --font-size-xlarge: 2.5rem;
-
-    /* Spacing */
-    --spacing-small: 0.5rem;
-    --spacing-medium: 1rem;
-    --spacing-large: 2rem;
-    --spacing-xlarge: 5rem;
-
-    /* Border Radius */
-    --border-radius: 8px;
-
-    /* HOVER BUTTON Transition */
-    --transition: all 0.3s ease-in-out;
-
-    /* Shadows */
-    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
 body {
     margin: 0;

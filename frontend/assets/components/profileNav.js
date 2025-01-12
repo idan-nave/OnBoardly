@@ -15,7 +15,7 @@ export const ProfileNav = () => {
   logo.alt = 'OnBoardly Logo';
   logo.classList.add('logo');
   logoLink.appendChild(logo);  // Add the logo to the link
-  logoLink.appendChild(document.createTextNode('My Company'));  // Add the logo text after the image
+  logoLink.appendChild(document.createTextNode('ZIM'));  // Add the logo text after the image
 
   h1.appendChild(logoLink);  // Add the link (logo) to the header
 
@@ -28,9 +28,9 @@ export const ProfileNav = () => {
   const categories = [
     { name: 'Departments', href: '#/departments' },
     { name: 'Onboarding Processes', href: '#/processes' },
-    { name: 'Managers', href: '#/managers' },
     { name: 'Incoming Employees', href: '#/employees' },
-    { name: 'Management Users', href: '#/management-users' }
+    { name: 'Managers', href: '#/managers' },
+    { name: 'Manage Access', href: '#/managers/access' }
   ];
 
   // Create list items for each category

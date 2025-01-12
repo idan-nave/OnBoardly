@@ -1,0 +1,44 @@
+.employees-page-container {
+  padding: 20px;
+}
+
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.employee-table th,
+.employee-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.employee-table th {
+  background-color: var(--color-primary);
+  cursor: pointer;
+  position: relative;
+}
+
+.employee-table th .sort-arrow {
+  font-size: 1.5em;
+  margin-left: 10px;
+  color: var(--color-accent);
+}
+
+.employee-table th:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.employee-table tbody tr {
+  cursor: pointer;
+}
+
+.employee-table tbody tr:hover {
+  background-color: #e6f7ff; /* Light blue hover effect */
+}
+
+.employee-table td:hover {
+  background-color: #f9f9f9; /* Light gray hover effect for cells */
+}
