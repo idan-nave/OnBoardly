@@ -1,5 +1,5 @@
-package services;
-import config.DBConfig;
+package com.company.onboarding.backend.services;
+import com.company.onboarding.backend.config.DBConfig;
 import java.sql.*;
 import java.util.ArrayList;
 

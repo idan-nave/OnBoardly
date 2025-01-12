@@ -1,4 +1,4 @@
-package services;
+package com.company.onboarding.backend.services;
 
 import java.sql.Connection;
 // import java.sql.Date;
@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
-import config.DBConfig;
+import com.company.onboarding.backend.config.DBConfig;
 
 public class UsersService {
 

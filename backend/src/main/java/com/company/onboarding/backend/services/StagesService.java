@@ -1,4 +1,4 @@
-package services;
+package com.company.onboarding.backend.services;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import config.DBConfig;
+import com.company.onboarding.backend.config.DBConfig;
 
 public class StagesService {
 
