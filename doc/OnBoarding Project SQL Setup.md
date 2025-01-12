@@ -60,7 +60,7 @@ You'll need the following tables in your database:
 
 - **Users**: To store company admin users.
 - **Companies**: To store company details.
-- **Teams**: To store team data.
+- **Teams**: To store department data.
 - **Processes**: To store onboarding processes.
 - **Workers**: To store information about designated workers.
 - **Stages**: To manage stages within onboarding processes.
@@ -87,12 +87,12 @@ CREATE TABLE users (
     FOREIGN KEY (company_id) REFERENCES companies(company_id)
 );
 
--- Table for Teams (Each team has one process)
+-- Table for Teams (Each department has one process)
 CREATE TABLE teams (
     team_id INT AUTO_INCREMENT PRIMARY KEY,
     company_id INT,
     team_name VARCHAR(255) NOT NULL,
-    process_id INT,  -- Foreign key for the process assigned to the team
+    process_id INT,  -- Foreign key for the process assigned to the department
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (company_id) REFERENCES companies(company_id),
     FOREIGN KEY (process_id) REFERENCES processes(process_id)  -- Link to processes table
@@ -175,16 +175,16 @@ Alternatively, if you are using a **shared database** or **cloud database** (e.g
 
 - **Local Development Setup**: All developers can work on localhost, using their individual local installations of MySQL for database management. This makes it easier for everyone to work independently, especially if different developers are working on different parts of the application (e.g., one on the frontend and one on the backend).
   
-- **Shared Database Setup**: If you're working in a team and prefer not to configure local databases individually, you can use a **shared cloud-based database** (e.g., AWS RDS, DigitalOcean Managed Databases) that all developers can access. In this case, all developers would work on the same database, and you only need one MySQL instance running on the cloud.
+- **Shared Database Setup**: If you're working in a department and prefer not to configure local databases individually, you can use a **shared cloud-based database** (e.g., AWS RDS, DigitalOcean Managed Databases) that all developers can access. In this case, all developers would work on the same database, and you only need one MySQL instance running on the cloud.
 
-- **Database Synchronization**: If working locally, be sure to use version control (Git) for any SQL schema changes, and communicate any table structure changes (e.g., adding new columns, modifying relationships) with the team so that everyone updates their local databases accordingly.
+- **Database Synchronization**: If working locally, be sure to use version control (Git) for any SQL schema changes, and communicate any table structure changes (e.g., adding new columns, modifying relationships) with the department so that everyone updates their local databases accordingly.
 
 ---
 
 ### 7. **Handling Data Consistency Across Multiple Developers**
 If multiple developers are working on the database, you need to establish a process to ensure data consistency:
 - **SQL Migrations**: You can use a version control system like Git to keep track of SQL schema changes. Create migration scripts that can be run by all developers to keep their local databases synchronized.
-- **Communication**: Regularly discuss any updates or changes to the database schema with the team.
+- **Communication**: Regularly discuss any updates or changes to the database schema with the department.
 
 ---
 
@@ -201,10 +201,10 @@ If multiple developers are working on the database, you need to establish a proc
 - **Install MySQL** locally or use a shared cloud instance.
 - **Create the database** and **tables** (follow the SQL schema provided).
 - **Set up the JDBC connection** in the backend project to connect to the database.
-- Developers can work on **localhost** or a **shared database** depending on the team's preferences.
-- Make sure to sync database changes (schema, data) across the team.
+- Developers can work on **localhost** or a **shared database** depending on the department's preferences.
+- Make sure to sync database changes (schema, data) across the department.
 
-With this setup, each team member will be able to connect to the database and manage the application's data accordingly.
+With this setup, each department member will be able to connect to the database and manage the application's data accordingly.
 
 If you’ve forgotten the MySQL root password, there are ways to reset it, depending on your operating system. Here’s a comprehensive guide for each platform:
 

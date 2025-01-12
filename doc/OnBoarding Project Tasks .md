@@ -1,21 +1,21 @@
-### **Assignment of responsibilities for each team-member of the team:**
+### **Assignment of responsibilities for each department-member of the department:**
 ```
 /project-root
 ├── /backend
 │   ├── /servlets
 │   │   ├── UserServlet.java        // Handle user-related API requests (HTTP Requests → Services)
-│   │   ├── TeamServlet.java        // Handle team-related API requests
+│   │   ├── TeamServlet.java        // Handle department-related API requests
 │   │   ├── ProcessServlet.java     // Handle onboarding process API requests
 │   │   └── CompanyServlet.java     // Handle company-related API requests
 │   ├── /models
 │   │   ├── User.java               // User entity (company admin)
-│   │   ├── Team.java               // Team entity
+│   │   ├── Department.java               // Department entity
 │   │   ├── Process.java            // Onboarding process entity
 │   │   ├── Worker.java             // Worker entity
 │   │   └── Company.java            // Company entity
 │   ├── /services
 │   │   ├── UserService.java        // Logic for user operations
-│   │   ├── TeamService.java        // Logic for team operations
+│   │   ├── TeamService.java        // Logic for department operations
 │   │   ├── ProcessService.java     // Logic for process operations
 │   │   └── CompanyService.java     // Logic for company operations
 │   ├── /utils
@@ -35,12 +35,12 @@
     │   ├── login.html             // Login page
     │   ├── signup.html            // Signup page
     │   ├── companyDashboard.html  // Company dashboard page
-    │   ├── teamDashboard.html     // Team dashboard page
+    │   ├── teamDashboard.html     // Department dashboard page
     │   ├── processDashboard.html  // Process dashboard page
     │   ├── addEditForm.html       // Template for adding/editing forms
     └── /controllers
         ├── companyController.js   // Frontend logic for company dashboard
-        ├── teamController.js      // Frontend logic for team dashboard
+        ├── teamController.js      // Frontend logic for department dashboard
         ├── processController.js   // Frontend logic for process dashboard
         ├── formController.js      // Logic for forms (create/edit)
         ├── loginController.js     // Login page frontend logic
@@ -48,7 +48,7 @@
         └── common.js              // Shared frontend logic (AJAX, validation)
 ```
 
-### **Responsibilities of Each Team Member**
+### **Responsibilities of Each Department Member**
 
 #### **1. Yossi**:
 **Backend (Java) Responsibilities:**
@@ -58,16 +58,16 @@
 **Frontend (JavaScript) Responsibilities:**
 - `loginController.js`: Handles the frontend logic for the login page (sending login request, handling response, etc.).
 - `index.html`: General home page that welcomes users and redirects to the login or signup page.
-- `header&footer`: teach the team how to add the header and footer to their page automatically.
-- `teamDashboard.html`: Page for presenting teams list and data per team
+- `header&footer`: teach the department how to add the header and footer to their page automatically.
+- `teamDashboard.html`: Page for presenting teams list and data per department
 
 #### **2. Idan**:
 **Backend (Java) Responsibilities:**
-- `TeamServlet.java`: Handles API requests related to teams (view/edit team data).
-- `TeamService.java`: Business logic for team operations (add/edit teams).
+- `TeamServlet.java`: Handles API requests related to teams (view/edit department data).
+- `TeamService.java`: Business logic for department operations (add/edit teams).
 
 **Frontend (JavaScript) Responsibilities:**
-- `teamController.js`: Handles the frontend logic for the team dashboard page (viewing/editing team information).
+- `teamController.js`: Handles the frontend logic for the department dashboard page (viewing/editing department information).
 - `Header&Footer`: General bars for every page.
 
 #### **3. Garmizo**:
@@ -104,8 +104,8 @@
     - Frontend: Develop `loginController.js` to handle form submission and communication with the backend.
 
 2. **Idan**:
-    - Backend: Develop `TeamServlet.java` and `TeamService.java` for team management.
-    - Frontend: Develop `teamController.js` to manage team-related actions (e.g., viewing/editing teams).
+    - Backend: Develop `TeamServlet.java` and `TeamService.java` for department management.
+    - Frontend: Develop `teamController.js` to manage department-related actions (e.g., viewing/editing teams).
 
 3. **Garmizo**:
     - Backend: Develop `ProcessServlet.java` and `ProcessService.java` for onboarding process management.
@@ -119,10 +119,10 @@
 
 ### **Workflow**
 
-- Each team member is responsible for both backend (Java) and frontend (JavaScript) logic that deals with their respective area (user, team, process, company).
+- Each department member is responsible for both backend (Java) and frontend (JavaScript) logic that deals with their respective area (user, department, process, company).
 - The backend (servlets and services) handles API requests, communicates with the database, and sends data to the frontend.
 - The frontend controllers handle logic for their respective views, making AJAX requests to the backend and updating the UI based on the responses.
-- Common files like `app.js` and `common.js` will be shared between all team members and will be used for global functionalities like AJAX handling, form validation, etc.
+- Common files like `app.js` and `common.js` will be shared between all department members and will be used for global functionalities like AJAX handling, form validation, etc.
 
 This structure allows each member to focus on their area, while also giving them the opportunity to contribute to both backend and frontend development.
 
@@ -135,22 +135,22 @@ This structure allows each member to focus on their area, while also giving them
 - Set up the frontend project structure (HTML, CSS, JS).
 
 #### **Hour 12:00-15:00: Frontend Development (Part 1)**
-- Develop the frontend for the Company Dashboard, Team Dashboard, and Process Dashboard.
+- Develop the frontend for the Company Dashboard, Department Dashboard, and Process Dashboard.
 - Design the forms for adding/editing teams, processes, and workers.
 
 #### **Hour 15:00-19:00: Backend Development (Part 1)**
-- Implement Company, User, Team, Process, Stage, Worker Classes.
+- Implement Company, User, Department, Process, Stage, Worker Classes.
 - Implement the Users Server: Authentication routes (login/signup).
-- Implement the Teams Server: CRUD routes for team management.
+- Implement the Teams Server: CRUD routes for department management.
 - Implement the Processes Server: CRUD routes for managing processes.
 
 #### **Hour 19:00-22:00: Backend Development (Part 2)**
 - Implement the Companies Server: Routes for managing company data.
 - Connect JDBC for all servers.
-- Begin implementing frontend pages for Company Dashboard, Team Dashboard, Process Dashboard.
+- Begin implementing frontend pages for Company Dashboard, Department Dashboard, Process Dashboard.
 
 #### **Hour 23:00-03:00: Frontend Development (Part 2)**
-- Finalize all forms: Company user, team creation, onboarding process creation.
+- Finalize all forms: Company user, department creation, onboarding process creation.
 - Implement AJAX calls to the REST APIs from frontend pages.
   
 #### **Hour 03:00-05:00: Testing, Debugging & Final Touches**

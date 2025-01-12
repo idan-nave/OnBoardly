@@ -18,7 +18,7 @@ The project is built using a combination of **Java (JDBC)** for the backend and 
 ## Features
 
 - **Company Dashboard**: Overview of processes, teams, and workers.
-- **Team Dashboard**: Information about the team, assigned onboarding process, and designated workers.
+- **Department Dashboard**: Information about the department, assigned onboarding process, and designated workers.
 - **Process Dashboard**: Overview of processes assigned to teams.
 - **Add/Edit Forms**: Interfaces for adding new teams, processes, and workers.
 - **User Authentication**: Admin login for managing company data and users.
@@ -34,7 +34,7 @@ The project is built using a combination of **Java (JDBC)** for the backend and 
   - HTML/CSS for layout and styling
   - JavaScript for frontend logic and AJAX requests
   - No frameworks (pure vanilla JS)
-- **Version Control**: Git for versioning and team collaboration
+- **Version Control**: Git for versioning and department collaboration
 
 ## Project Structure
 
@@ -59,7 +59,7 @@ The project is built using a combination of **Java (JDBC)** for the backend and 
 ### Backend
 
 - **/controllers**: Java servlets to handle incoming API requests.
-- **/models**: Data entities such as `User`, `Team`, `Process`, etc.
+- **/models**: Data entities such as `User`, `Department`, `Process`, etc.
 - **/services**: Business logic for processing requests (e.g., creating teams, assigning processes).
 - **/utils**: Helper utilities, such as DB connections.
 - **/config**: Configuration files for the database and app settings.
@@ -79,7 +79,7 @@ Before starting the project, ensure the following dependencies and tools are ins
 
 - **Java 8+**: Java Development Kit for running the backend code.
 - **Apache Tomcat or similar Servlet container**: To run Java servlets.
-- **MySQL (or similar SQL database)**: For storing company, team, process, and worker data.
+- **MySQL (or similar SQL database)**: For storing company, department, process, and worker data.
 - **JDBC**: For database communication.
 
 ### Frontend:
@@ -121,7 +121,7 @@ Before starting the project, ensure the following dependencies and tools are ins
    - Use a local server or open them directly in your browser.
 
 6. **Start working on your assigned tasks**:
-   - Each team member is assigned to a specific part of the project (backend or frontend).
+   - Each department member is assigned to a specific part of the project (backend or frontend).
    - Follow the MVC architecture, ensuring proper separation of concerns between the data (models), business logic (services), and user interface (views).
 
 ## API Endpoints
@@ -133,12 +133,12 @@ Here are some of the basic API endpoints for the backend:
 - **POST** `/login`: User login
 - **POST** `/register`: Create a new company user
 
-### Team Endpoints
+### Department Endpoints
 
 - **GET** `/teams`: Get list of all teams
-- **POST** `/teams`: Create a new team
-- **PUT** `/teams/{teamId}`: Update team information
-- **DELETE** `/teams/{teamId}`: Delete a team
+- **POST** `/teams`: Create a new department
+- **PUT** `/teams/{teamId}`: Update department information
+- **DELETE** `/teams/{teamId}`: Delete a department
 
 ### Process Endpoints
 

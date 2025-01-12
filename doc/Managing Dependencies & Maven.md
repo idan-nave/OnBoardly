@@ -403,6 +403,6 @@ By integrating Maven into your project, you can:
 - Automatically handle dependencies.
 - Use standard directory structures for organizing code.
 - Easily build and deploy the project using Maven commands.
-- Improve collaboration between team members by having a single source of truth for the project's build process (through `pom.xml`).
+- Improve collaboration between department members by having a single source of truth for the project's build process (through `pom.xml`).
 
 Let me know if you need further assistance in adjusting your project or setting up Maven with specific configurations!

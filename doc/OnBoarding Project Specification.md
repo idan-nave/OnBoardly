@@ -20,17 +20,17 @@ The goal is to develop a web service platform for companies to manage the onboar
 - **Overview**: A high-level dashboard that displays a summary of the company’s teams, onboarding processes, and designated workers.
 - **Features**:
   - View the list of teams, processes, and designated workers.
-  - Quick overview of the onboarding stages for each team and its workers.
+  - Quick overview of the onboarding stages for each department and its workers.
   - Link to create new teams or processes.
 
-#### **3. Team Dashboard**
-- **Overview**: A dashboard for each team showing detailed information about the team, its assigned onboarding process, and the workers.
+#### **3. Department Dashboard**
+- **Overview**: A dashboard for each department showing detailed information about the department, its assigned onboarding process, and the workers.
 - **Features**:
-  - Team Information: Display team name, manager, and members.
-  - Assigned Process: View the currently assigned onboarding process for the team.
-  - Designated Workers: List of workers for the team, showing their status in the onboarding process (e.g., not started, in progress, completed).
-  - Add New Worker: A link to a page where new workers can be added to the team.
-  - Edit Team: Modify team details, including adding/removing workers and updating the onboarding process.
+  - Department Information: Display department name, manager, and members.
+  - Assigned Process: View the currently assigned onboarding process for the department.
+  - Designated Workers: List of workers for the department, showing their status in the onboarding process (e.g., not started, in progress, completed).
+  - Add New Worker: A link to a page where new workers can be added to the department.
+  - Edit Department: Modify department details, including adding/removing workers and updating the onboarding process.
 
 #### **4. Onboarding Process Dashboard**
 - **Overview**: A page that displays information about the onboarding process, its assigned teams, and designated workers.
@@ -43,9 +43,9 @@ The goal is to develop a web service platform for companies to manage the onboar
 #### **5. Add/Edit Forms**
 - Forms for adding or editing the following entities:
   - **Company User**: A form to create or edit a company user in the platform.
-  - **Team**: A form to create or modify a team (name, manager, etc.).
+  - **Department**: A form to create or modify a department (name, manager, etc.).
   - **Onboarding Process**: A form to create or edit an onboarding process (stages, process steps, etc.).
-  - **Worker**: A form to add new workers to a team.
+  - **Worker**: A form to add new workers to a department.
 
 ---
 
@@ -58,7 +58,7 @@ The goal is to develop a web service platform for companies to manage the onboar
 - **Company**: Represents a company that uses the platform.
   - **Fields**: `id`, `name`, `email`, `address`
   
-- **Team**: Represents a team in the company.
+- **Department**: Represents a department in the company.
   - **Fields**: `id`, `team_name`, `manager_id (foreign key)`, `company_id (foreign key)`
   
 - **Worker**: Represents an employee who is undergoing the onboarding process.
@@ -80,8 +80,8 @@ The goal is to develop a web service platform for companies to manage the onboar
   - `stages (id, stage_name, process_id)`
 
 The relationships:
-- **One-to-many**: A company can have multiple teams, and a team can have multiple workers.
-- **Many-to-many**: A process can be assigned to multiple teams, and a team can have multiple processes assigned at different times.
+- **One-to-many**: A company can have multiple teams, and a department can have multiple workers.
+- **Many-to-many**: A process can be assigned to multiple teams, and a department can have multiple processes assigned at different times.
 
 ---
 
@@ -93,7 +93,7 @@ The relationships:
 - **Controller Layer**: Implement REST API controllers to interact with the frontend.
 - **JDBC Servers**: Each backend feature will have its own separate server:
   1. **Users Server**: Handles authentication and user management.
-  2. **Teams Server**: Manages team data (create, edit, view).
+  2. **Teams Server**: Manages department data (create, edit, view).
   3. **Processes Server**: Manages onboarding process data (create, edit, view).
   4. **Companies Server**: Manages company-specific data (view, edit).
 
@@ -104,7 +104,7 @@ Each controller will expose **REST API routes** to manage the data and interact 
 - **Pages**:
   - **Join Us Page**: For company registration and user creation.
   - **Company Dashboard**: A summary of teams, processes, and workers.
-  - **Team Dashboard**: Detailed info for teams, their assigned process, and workers.
+  - **Department Dashboard**: Detailed info for teams, their assigned process, and workers.
   - **Onboarding Processes Dashboard**: Info about processes, teams assigned to them, and designated workers.
   - **Add/Edit Forms**: Forms for adding or editing company users, teams, processes, and workers.
 
@@ -122,10 +122,10 @@ Each backend server will expose specific REST routes to manage the data for the 
 
 2. **Teams Server**
    - `GET /api/teams`: Get all teams in the company.
-   - `GET /api/team/{id}`: View team details.
-   - `POST /api/team`: Create a new team.
-   - `PUT /api/team/{id}`: Update team details.
-   - `DELETE /api/team/{id}`: Delete a team.
+   - `GET /api/department/{id}`: View department details.
+   - `POST /api/department`: Create a new department.
+   - `PUT /api/department/{id}`: Update department details.
+   - `DELETE /api/department/{id}`: Delete a department.
 
 3. **Processes Server**
    - `GET /api/processes`: Get all onboarding processes for a company.
@@ -142,9 +142,9 @@ Each controller will handle **GET**, **POST**, **PUT**, and **DELETE** requests 
 
 ---
 
-### **Roles & Team Structure**
+### **Roles & Department Structure**
 
-- **Team Leader (Senior Developer)**: Will oversee the entire development process, manage task delegation, and ensure deadlines are met.
+- **Department Leader (Senior Developer)**: Will oversee the entire development process, manage task delegation, and ensure deadlines are met.
 - **Senior-Junior Pairs (3 Pairs)**: Each pair will be responsible for specific backend servers and frontend development tasks. The juniors will focus on frontend implementation, form development, and connecting the frontend with the API. Seniors will handle backend services, JDBC setup, REST API routes, and database management.
 
 ### **Frontend Dashboards Explanation & Wireframe Guidance**
@@ -154,7 +154,7 @@ Each controller will handle **GET**, **POST**, **PUT**, and **DELETE** requests 
   
 - **Dashboard Components**:
   - **Summary**: Displays a brief overview of the company's information (name, contact, etc.) and a high-level count of teams, processes, and workers.
-  - **Teams**: A list of the teams within the company, with a link to the Team Dashboard.
+  - **Teams**: A list of the teams within the company, with a link to the Department Dashboard.
   - **Processes**: A list of onboarding processes available to the company, with a link to the Process Dashboard.
   - **Designated Workers**: Quick summary of how many workers are assigned to each process.
 
@@ -165,20 +165,20 @@ Each controller will handle **GET**, **POST**, **PUT**, and **DELETE** requests 
     - Summary section at the top with counts of teams, processes, and workers.
     - Below, lists of "Teams" and "Processes" with clickable links for further management.
 
-#### **2. Team Dashboard**
-- **Overview**: The Team Dashboard will display detailed information about each team, including their assigned onboarding process, workers, and their progress. This dashboard enables the team manager to track the team's onboarding progress and manage workers.
+#### **2. Department Dashboard**
+- **Overview**: The Department Dashboard will display detailed information about each department, including their assigned onboarding process, workers, and their progress. This dashboard enables the department manager to track the department's onboarding progress and manage workers.
 
 - **Dashboard Components**:
-  - **Team Information**: Basic info about the team such as team name, manager, and assigned onboarding process.
-  - **Onboarding Process**: A section showing the current onboarding process assigned to the team with clickable stages (linked to Process Dashboard).
-  - **Designated Workers**: A list of workers assigned to the team with their current onboarding status (e.g., "In Progress", "Completed").
-  - **Add New Worker**: A button to navigate to a form to add new workers to the team.
+  - **Department Information**: Basic info about the department such as department name, manager, and assigned onboarding process.
+  - **Onboarding Process**: A section showing the current onboarding process assigned to the department with clickable stages (linked to Process Dashboard).
+  - **Designated Workers**: A list of workers assigned to the department with their current onboarding status (e.g., "In Progress", "Completed").
+  - **Add New Worker**: A button to navigate to a form to add new workers to the department.
 
 - **Wireframe**:  
-  - **Header**: "Team Dashboard" with the team name and manager.
-  - **Sidebar**: Links to "Team Information", "Assigned Process", "Workers", "Add Worker".
+  - **Header**: "Department Dashboard" with the department name and manager.
+  - **Sidebar**: Links to "Department Information", "Assigned Process", "Workers", "Add Worker".
   - **Main Content Area**:
-    - Team info at the top.
+    - Department info at the top.
     - Below, a list of stages in the assigned process.
     - Below that, a list of workers with their onboarding status.
     - An "Add New Worker" button to create a new worker.
@@ -204,11 +204,11 @@ Each controller will handle **GET**, **POST**, **PUT**, and **DELETE** requests 
 - **Overview**: These pages provide forms for adding or editing data entities: teams, processes, workers, and companies.
 
 - **Wireframe**:  
-  - **Header**: The title of the page (e.g., "Create New Team", "Edit Onboarding Process").
+  - **Header**: The title of the page (e.g., "Create New Department", "Edit Onboarding Process").
   - **Form Fields**:
-    - For **Teams**: Team name, manager, assigned onboarding process.
+    - For **Teams**: Department name, manager, assigned onboarding process.
     - For **Processes**: Process name, stages (multi-step), description.
-    - For **Workers**: Worker name, email, team assignment.
+    - For **Workers**: Worker name, email, department assignment.
   - **Form Buttons**: "Save", "Cancel".
 
 ---
@@ -224,18 +224,18 @@ In your case, since you are working with a vanilla Java setup (no frameworks lik
 ├── /backend
 │   ├── /servlets
 │   │   ├── UserServlet.java        // Handle user-related API requests (HTTP Requests → Services)
-│   │   ├── TeamServlet.java        // Handle team-related API requests
+│   │   ├── TeamServlet.java        // Handle department-related API requests
 │   │   ├── ProcessServlet.java     // Handle onboarding process API requests
 │   │   └── CompanyServlet.java     // Handle company-related API requests
 │   ├── /models
 │   │   ├── User.java               // User entity (company admin)
-│   │   ├── Team.java               // Team entity
+│   │   ├── Department.java               // Department entity
 │   │   ├── Process.java            // Onboarding process entity
 │   │   ├── Worker.java             // Worker entity
 │   │   └── Company.java            // Company entity
 │   ├── /services
 │   │   ├── UserService.java        // Logic for user operations
-│   │   ├── TeamService.java        // Logic for team operations
+│   │   ├── TeamService.java        // Logic for department operations
 │   │   ├── ProcessService.java     // Logic for process operations
 │   │   └── CompanyService.java     // Logic for company operations
 │   ├── /utils
@@ -255,12 +255,12 @@ In your case, since you are working with a vanilla Java setup (no frameworks lik
     │   ├── login.html             // Login page
     │   ├── signup.html            // Signup page
     │   ├── companyDashboard.html  // Company dashboard page
-    │   ├── teamDashboard.html     // Team dashboard page
+    │   ├── teamDashboard.html     // Department dashboard page
     │   ├── processDashboard.html  // Process dashboard page
     │   ├── addEditForm.html       // Template for adding/editing forms
     └── /controllers
         ├── companyController.js   // Frontend logic for company dashboard
-        ├── teamController.js      // Frontend logic for team dashboard
+        ├── teamController.js      // Frontend logic for department dashboard
         ├── processController.js   // Frontend logic for process dashboard
         ├── formController.js      // Logic for forms (create/edit)
         ├── loginController.js     // Login page frontend logic
@@ -272,7 +272,7 @@ In your case, since you are working with a vanilla Java setup (no frameworks lik
   - **Controllers**: Will handle incoming API requests and return responses. Each pair can work on their respective controllers (one for users, teams, processes, or companies).
   Backend Controllers = Servlets. servlets are responsible for handling incoming HTTP requests, routing them to the appropriate service layer (where business logic is implemented), and sending back the response to the client (frontend).
   - **Models**: Represent the data entities, which can be shared across different backend components.
-  Models are Java classes that represent the data entities of your application, like User.java, Team.java, Process.java, etc.
+  Models are Java classes that represent the data entities of your application, like User.java, Department.java, Process.java, etc.
   - **Services**: Will contain the business logic, separate from the controllers. Each pair can work on implementing logic for their respective entities.
 
 - **Frontend (HTML, CSS, JS)**:
@@ -309,11 +309,11 @@ Here’s how a typical flow would work:
 
 To clarify:
 - **Servlets act as Controllers** in your case (handling HTTP requests).
-- **Models** represent the data entities (like `User`, `Team`, `Process`).
+- **Models** represent the data entities (like `User`, `Department`, `Process`).
 - **Services** handle the business logic (interacting with models and performing actions like creating or updating records).
 - **Frontend Controllers** (JavaScript files) handle client-side logic (AJAX requests, UI updates).
 
-This setup follows the **MVC pattern** using servlets as controllers, and it will allow your team members to work on the specific components they are assigned while maintaining a clean architecture.
+This setup follows the **MVC pattern** using servlets as controllers, and it will allow your department members to work on the specific components they are assigned while maintaining a clean architecture.
 ---
 
 ### **Example SQL Tables**
@@ -387,22 +387,22 @@ This project structure enables parallel development by dividing responsibilities
 - Set up the frontend project structure (HTML, CSS, JS).
 
 #### **Hour 12:00-15:00: Frontend Development (Part 1)**
-- Develop the frontend for the Company Dashboard, Team Dashboard, and Process Dashboard.
+- Develop the frontend for the Company Dashboard, Department Dashboard, and Process Dashboard.
 - Design the forms for adding/editing teams, processes, and workers.
 
 #### **Hour 15:00-19:00: Backend Development (Part 1)**
-- Implement Company, User, Team, Process, Stage, Worker Classes.
+- Implement Company, User, Department, Process, Stage, Worker Classes.
 - Implement the Users Server: Authentication routes (login/signup).
-- Implement the Teams Server: CRUD routes for team management.
+- Implement the Teams Server: CRUD routes for department management.
 - Implement the Processes Server: CRUD routes for managing processes.
 
 #### **Hour 19:00-22:00: Backend Development (Part 2)**
 - Implement the Companies Server: Routes for managing company data.
 - Connect JDBC for all servers.
-- Begin implementing frontend pages for Company Dashboard, Team Dashboard, Process Dashboard.
+- Begin implementing frontend pages for Company Dashboard, Department Dashboard, Process Dashboard.
 
 #### **Hour 23:00-03:00: Frontend Development (Part 2)**
-- Finalize all forms: Company user, team creation, onboarding process creation.
+- Finalize all forms: Company user, department creation, onboarding process creation.
 - Implement AJAX calls to the REST APIs from frontend pages.
   
 #### **Hour 03:00-05:00: Testing, Debugging & Final Touches**
@@ -425,7 +425,7 @@ This project structure enables parallel development by dividing responsibilities
 
 ### **Conclusion**
 
-This project will provide companies with a robust platform for managing employee onboarding processes. By breaking the project into clearly defined tasks and using a team-based approach, we can efficiently deliver a working solution within the given 24-hour timeframe.
+This project will provide companies with a robust platform for managing employee onboarding processes. By breaking the project into clearly defined tasks and using a department-based approach, we can efficiently deliver a working solution within the given 24-hour timeframe.
 
 
 ### **Full Front-To-Back Data Flow Example**
@@ -434,7 +434,7 @@ This project will provide companies with a robust platform for managing employee
 
 ### **Step 1: Front-End (HTML and JavaScript)**
 
-This part will remain the same. The user selects a process and assigns it to a team.
+This part will remain the same. The user selects a process and assigns it to a department.
 
 ```html
 <!-- /frontend/views/teamDashboard.html -->
@@ -443,7 +443,7 @@ This part will remain the same. The user selects a process and assigns it to a t
     <title>Assign Onboarding Process</title>
 </head>
 <body>
-    <h2>Assign Onboarding Process to Team</h2>
+    <h2>Assign Onboarding Process to Department</h2>
 
     <!-- Dropdown to select an onboarding process -->
     <select id="processSelect">
@@ -464,9 +464,9 @@ This part will remain the same. The user selects a process and assigns it to a t
 // /frontend/js/teamController.js
 document.getElementById("assignProcessBtn").addEventListener("click", function() {
     const processId = document.getElementById("processSelect").value;
-    const teamId = 1; // Example team ID
+    const teamId = 1; // Example department ID
 
-    // Sending POST request to the backend API to assign the process to the team
+    // Sending POST request to the backend API to assign the process to the department
     fetch('/assignProcess', {
         method: 'POST',
         headers: {
@@ -493,21 +493,21 @@ document.getElementById("assignProcessBtn").addEventListener("click", function()
 
 ### **Step 2: Java Classes for Business Logic**
 
-Now, let's add some **Java classes** to represent the **Team** and **Process** entities, and a **TeamService** class to manage the logic.
+Now, let's add some **Java classes** to represent the **Department** and **Process** entities, and a **TeamService** class to manage the logic.
 
-#### **1. `Team` Class**:
+#### **1. `Department` Class**:
 
-This class represents a team in your system.
+This class represents a department in your system.
 
 ```java
-// /backend/models/Team.java
-public class Team {
+// /backend/models/Department.java
+public class Department {
     private int id;
     private String name;
-    private int processId; // The ID of the process assigned to this team
+    private int processId; // The ID of the process assigned to this department
 
     // Constructor
-    public Team(int id, String name, int processId) {
+    public Department(int id, String name, int processId) {
         this.id = id;
         this.name = name;
         this.processId = processId;
@@ -577,7 +577,7 @@ public class Process {
 
 #### **3. `TeamService` Class**:
 
-This class will contain the business logic for assigning a process to a team.
+This class will contain the business logic for assigning a process to a department.
 
 ```java
 // /backend/services/TeamService.java
@@ -588,10 +588,10 @@ public class TeamService {
     private static final String DB_USER = "root";
     private static final String DB_PASS = "password";
 
-    // Method to assign a process to a team
+    // Method to assign a process to a department
     public boolean assignProcessToTeam(int teamId, int processId) {
-        // Create a team object (optional, depending on your business logic)
-        Team team = new Team(teamId, "Team " + teamId, processId);
+        // Create a department object (optional, depending on your business logic)
+        Department department = new Department(teamId, "Department " + teamId, processId);
 
         // Execute the DB update
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
@@ -611,14 +611,14 @@ public class TeamService {
 }
 ```
 
-- The **`TeamService`** class abstracts the logic of interacting with the database. It uses the `Team` class as an object to pass data and handle business logic.
-- The **`assignProcessToTeam()`** method handles the process of updating the team’s process in the database.
+- The **`TeamService`** class abstracts the logic of interacting with the database. It uses the `Department` class as an object to pass data and handle business logic.
+- The **`assignProcessToTeam()`** method handles the process of updating the department’s process in the database.
 
 ---
 
 ### **Step 3: Backend Servlet**
 
-The servlet will now use the `TeamService` class to handle the logic for assigning the process to the team.
+The servlet will now use the `TeamService` class to handle the logic for assigning the process to the department.
 
 ```java
 // /backend/servlets/AssignProcessServlet.java
@@ -715,11 +715,11 @@ CREATE TABLE teams (
 
 - **Backend (Java Classes and Servlets)**:
   - **Models**: 
-    - `/backend/models/Team.java`: Team class representing a team.
+    - `/backend/models/Department.java`: Department class representing a department.
     - `/backend/models/Process.java`: Process class representing an onboarding process.
     - `/backend/models/AssignProcessRequest.java`: Class representing the incoming request data.
   - **Service**: 
-    - `/backend/services/TeamService.java`: Business logic for handling team-related operations (like assigning a process).
+    - `/backend/services/TeamService.java`: Business logic for handling department-related operations (like assigning a process).
   - **Servlet**: 
     - `/backend/servlets/AssignProcessServlet.java`: Servlet that handles the HTTP POST request and uses the `TeamService` to assign a process.
 
@@ -730,7 +730,7 @@ CREATE TABLE teams (
 
 ### Conclusion
 
-In this updated example, I've integrated the Java classes (`Team`, `Process`, `TeamService`) into the flow, abstracting the logic from the servlet and using the service layer to handle the business logic of assigning a process to a team. These Java classes provide a clean structure for your application, helping organize your code into logical components while allowing you to interact with the database via JDBC.
+In this updated example, I've integrated the Java classes (`Department`, `Process`, `TeamService`) into the flow, abstracting the logic from the servlet and using the service layer to handle the business logic of assigning a process to a department. These Java classes provide a clean structure for your application, helping organize your code into logical components while allowing you to interact with the database via JDBC.
 
 ### **Project Presentation: Developer Onboarding Management Platform**
 
@@ -741,11 +741,11 @@ Each member will cover a specific section of the project, with code snippets to 
 ---
 
 ### **Opening (30 seconds)**
-- **Speaker**: Team Leader (Senior)
+- **Speaker**: Department Leader (Senior)
 - **Overview**: 
   - Introduce the project: A platform for companies to manage the onboarding process of new employees.
   - The project will provide a system for companies to register, create teams, assign onboarding processes to those teams, and track employee status.
-  - Each team member will cover their part, explaining the backend, frontend, and overall architecture.
+  - Each department member will cover their part, explaining the backend, frontend, and overall architecture.
 
 ---
 
@@ -756,7 +756,7 @@ Each member will cover a specific section of the project, with code snippets to 
   - **Backend Layers**:
     - **Controllers (Servlets)**: Handle HTTP requests and responses.
     - **Services**: Contain business logic.
-    - **Models**: Represent the data entities (User, Team, Process).
+    - **Models**: Represent the data entities (User, Department, Process).
   - **Database**: Use an SQL database for data persistence, connected via JDBC.
   
 **Code Snippet: UserServlet.java (Controller)**  
@@ -821,7 +821,7 @@ public class UserService {
 ### **3. Models and Database Interaction (1 minute)**
 - **Speaker**: Junior 1
 - **Content**: 
-  - **Models**: Represent the entities (like `User`, `Team`, `Process`).
+  - **Models**: Represent the entities (like `User`, `Department`, `Process`).
   - **Database Interaction**: We use JDBC to interact with the SQL database. Each model corresponds to a database table.
   
 **Code Snippet: User.java (Model)**  
@@ -895,7 +895,7 @@ document.getElementById("addUserBtn").addEventListener("click", function() {
 ### **5. SQL Database Setup and DAO Layer (1 minute)**
 - **Speaker**: Junior 3
 - **Content**: 
-  - **Database Setup**: We use an SQL database to store user, team, and process data.
+  - **Database Setup**: We use an SQL database to store user, department, and process data.
   - **DAO Layer**: The DAO (Data Access Object) layer is responsible for database operations like `create`, `read`, `update`, and `delete`.
 
 **Code Snippet: UserDAO.java (DAO Layer)**  
@@ -929,17 +929,17 @@ public class UserDAO {
 
 ---
 
-### **6. Conclusion and Team Collaboration (1 minute)**
-- **Speaker**: Team Leader (Senior)
+### **6. Conclusion and Department Collaboration (1 minute)**
+- **Speaker**: Department Leader (Senior)
 - **Content**: 
-  - **Collaboration**: Each team member worked on a specific part of the project (backend logic, database, frontend, etc.). 
+  - **Collaboration**: Each department member worked on a specific part of the project (backend logic, database, frontend, etc.). 
   - **Next Steps**: The project is nearly ready for further testing and deployment. We'll continue refining features and ensuring seamless integration between all layers.
-  - Thank the team and summarize the work done.
+  - Thank the department and summarize the work done.
 
 ---
 
 ### **End of Presentation (7 minutes)**
 
-- **Team Leader** concludes the presentation, thanks the audience, and opens the floor for any questions. 
+- **Department Leader** concludes the presentation, thanks the audience, and opens the floor for any questions. 
 
-Each team member provides clear and concise explanations, along with code snippets demonstrating their part in the project, ensuring a smooth and collaborative presentation.
+Each department member provides clear and concise explanations, along with code snippets demonstrating their part in the project, ensuring a smooth and collaborative presentation.

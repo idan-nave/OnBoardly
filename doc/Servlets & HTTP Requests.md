@@ -147,9 +147,9 @@ Servlets are a fundamental part of Java web development, and they play a crucial
 
 ### Servlet Example in our OnBoarding Project:
 
-The `AssignProcessServlet` is a **Java Servlet** that acts as a backend endpoint for handling HTTP requests related to assigning onboarding processes to teams in your application. It receives HTTP requests (typically `POST` requests), processes the incoming data (in this case, the team and process details), and responds with appropriate messages.
+The `AssignProcessServlet` is a **Java Servlet** that acts as a backend endpoint for handling HTTP requests related to assigning onboarding processes to teams in your application. It receives HTTP requests (typically `POST` requests), processes the incoming data (in this case, the department and process details), and responds with appropriate messages.
 
-In the context of your project, it is used for assigning a specific onboarding process to a particular team.
+In the context of your project, it is used for assigning a specific onboarding process to a particular department.
 
 
 ### `AssignProcessServlet.java`
@@ -205,11 +205,11 @@ public class AssignProcessServlet extends HttpServlet {
 
         // Validate the input data (e.g., teamId and processId must not be null or negative)
         if (assignRequest.getTeamId() <= 0 || assignRequest.getProcessId() <= 0) {
-            handleError(response, HttpServletResponse.SC_BAD_REQUEST, "Invalid team ID or process ID");
+            handleError(response, HttpServletResponse.SC_BAD_REQUEST, "Invalid department ID or process ID");
             return;
         }
 
-        // Call the service to assign the process to the team
+        // Call the service to assign the process to the department
         boolean success = teamService.assignProcessToTeam(assignRequest.getTeamId(), assignRequest.getProcessId());
 
         // Prepare the response based on the result of the assignment operation
@@ -256,7 +256,7 @@ public class AssignProcessServlet extends HttpServlet {
    - Servlets are usually used in web applications to provide dynamic content and business logic processing.
 
 2. **AssignProcessServlet**:
-   - This servlet is responsible for processing the business logic when a request to assign an onboarding process to a team is made.
+   - This servlet is responsible for processing the business logic when a request to assign an onboarding process to a department is made.
    - It listens to HTTP requests (specifically POST requests), extracts data from the request body, and sends a response to the client indicating whether the operation was successful.
 
 ### Breakdown of `AssignProcessServlet`:
@@ -267,14 +267,14 @@ public class AssignProcessServlet extends HttpServlet {
 
 #### 2. **doPost Method**:
    - `doPost()` is an HTTP method that handles **POST requests**. This method processes the incoming request, performs necessary business logic (like calling a service), and sends a response.
-   - In your case, the `doPost()` method receives an HTTP request, extracts the body (in JSON format), and passes the data to the `TeamService` to assign a process to a team.
+   - In your case, the `doPost()` method receives an HTTP request, extracts the body (in JSON format), and passes the data to the `TeamService` to assign a process to a department.
 
 #### 3. **Reading and Parsing JSON**:
    - The request body is expected to be in **JSON format**, so the servlet reads the input stream, converts it into a `String`, and then uses an `ObjectMapper` from the Jackson library to **deserialize** the JSON string into a Java object (`AssignProcessRequest`).
    - This allows the servlet to easily handle structured data coming from the frontend.
 
 #### 4. **Business Logic Call**:
-   - The `TeamService` class is invoked to process the assignment of the onboarding process to the team. If the assignment is successful, the servlet prepares a success response. If not, it sends an error message.
+   - The `TeamService` class is invoked to process the assignment of the onboarding process to the department. If the assignment is successful, the servlet prepares a success response. If not, it sends an error message.
 
 #### 5. **Response Handling**:
    - After processing the request, the servlet sends a JSON response back to the frontend with a message (either success or failure).
@@ -315,7 +315,7 @@ public class AssignProcessServlet extends HttpServlet {
      ```java
      public class TeamService {
          public boolean assignProcessToTeam(int teamId, int processId) {
-             // Logic to assign the process to the team (e.g., update a database, etc.)
+             // Logic to assign the process to the department (e.g., update a database, etc.)
              return true; // Return true if successful
          }
      }
@@ -365,7 +365,7 @@ public class AssignProcessServlet extends HttpServlet {
 With the `@WebServlet` annotation, the servlet is automatically mapped to the `/assignProcess` URL pattern, and you no longer need to configure it in the `web.xml`.
 
 ### Conclusion:
-The `AssignProcessServlet` is a backend component of your web application that listens for requests to assign an onboarding process to a team. It reads incoming data, processes it with business logic, and sends a response back to the client. This servlet can be improved and simplified using annotations for servlet mapping.
+The `AssignProcessServlet` is a backend component of your web application that listens for requests to assign an onboarding process to a department. It reads incoming data, processes it with business logic, and sends a response back to the client. This servlet can be improved and simplified using annotations for servlet mapping.
 
 ### Key Properties:
 1. **Annotations**:
@@ -392,7 +392,7 @@ The `AssignProcessServlet` is a backend component of your web application that l
 
 ### Improvements in Action:
 1. If the request contains invalid JSON or missing parameters, the servlet will send a clear error message along with a `400` HTTP status code.
-2. The servlet ensures that only valid team IDs and process IDs are processed, helping to prevent errors at later stages.
+2. The servlet ensures that only valid department IDs and process IDs are processed, helping to prevent errors at later stages.
 3. The client (frontend) will receive JSON responses that clearly indicate the success or failure of the operation.
 
 ### Example Request:
@@ -406,7 +406,7 @@ fetch('/assignProcess', {
         'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-        teamId: 1,  // valid team ID
+        teamId: 1,  // valid department ID
         processId: 101  // valid process ID
     })
 })

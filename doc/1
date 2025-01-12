@@ -1,0 +1,47 @@
+
+
+ User          Page        API Endpoint    AssignProcessHadler     TeamService     Database
+  |             |                 |                  |                   |              |
+  | Click Assign|                 |                  |                   |              |
+  | Process Btn |                 |                  |                   |              |
+  |------------>|                 |                  |                   |              |
+  |             | Send POST Req   |                  |                   |              |
+  |             |---------------->|                  |                   |              |
+  |             |                 | Receive Req      |                   |              |
+  |             |                 |----------------->|                   |              |
+  |             |                 | Validate JSON    |                   |              |
+  |             |                 |----------------->|                   |              |
+  |             |                 | Call Handler     |                   |              |
+  |             |                 |----------------->| Assign Process    |              |
+  |             |                 |                  |------------------>| Update Team  |
+  |             |                 |                  |                   | Execute SQL  |
+  |             |                 |                  |                   |--------------|
+  |             |                 |                  |                   | Return Result|
+  |             |                 |                  |<------------------|              |
+  |             |                 | Response         |                   |              |
+  |             |                 |<-----------------|                   |              |
+  | Show Alert  |                 |                  |                   |              |
+  |<------------|                 |                  |                   |              |
+
+Sequence Diagram Representation (Text and Arrows)
+Below is a textual sequence diagram illustrating the Assign Process to Team flow:
+User clicks "Assign Process" button on the page
+User --------> | Page (assignProcessBtn click)
+Page sends a POST request to /assignProcess
+Page -----------> | API Endpoint (fetch)
+Server receives the request and dispatches it to the servlet
+API Endpoint ------------>| AssignProcessServlet (doPost)
+Servlet reads and validates the request body (JSON data)
+AssignProcessServlet -------------> | AssignProcessDTO (deserialize JSON)
+Servlet calls the service layer to assign the process
+AssignProcessServlet -----------> | TeamService (assignProcessToTeam)
+Service layer interacts with the database to update the team record
+TeamService -------------> | Database (SQL query execution)
+Database responds with the number of affected rows
+Database -----------> | TeamService
+Service layer returns success/failure to the servlet
+TeamService -----------> | AssignProcessServlet
+Servlet prepares and sends the response back to the client
+AssignProcessServlet -------------> | API Response (JSON)
+Page displays success or error message to the user
+API Response -----------> | Page (alert)

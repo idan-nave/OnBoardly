@@ -41,8 +41,8 @@ public class User {
 }
 EOL
 
-cat > $BACKEND_DIR/models/Team.java <<EOL
-public class Team {
+cat > $BACKEND_DIR/models/Department.java <<EOL
+public class Department {
     private int id;
     private String name;
 
@@ -123,7 +123,7 @@ EOL
 cat > $BACKEND_DIR/controllers/TeamController.java <<EOL
 public class TeamController {
     public void createTeam() {
-        // Create team logic
+        // Create department logic
     }
 }
 EOL
@@ -151,10 +151,10 @@ cat > $FRONTEND_DIR/views/teamDashboard.html <<EOL
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Dashboard</title>
+    <title>Department Dashboard</title>
 </head>
 <body>
-    <h1>Team Dashboard</h1>
+    <h1>Department Dashboard</h1>
     <div id="processes"></div>
 </body>
 </html>
@@ -184,7 +184,7 @@ cat > $FRONTEND_DIR/views/addEditForm.html <<EOL
     <title>Add/Edit Form</title>
 </head>
 <body>
-    <h1>Create or Edit a Team or Process</h1>
+    <h1>Create or Edit a Department or Process</h1>
     <form id="createForm">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
