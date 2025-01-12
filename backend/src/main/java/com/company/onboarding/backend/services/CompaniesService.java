@@ -1,5 +1,5 @@
-package services;
-import config.DBConfig;
+package com.company.onboarding.backend.services;
+import com.company.onboarding.backend.config.DBConfig;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -209,7 +209,7 @@ public Timestamp getCompanyCreatedAt(int companyId) {
 }
 
     public static void main(String[] args) {
-        // CompaniesService c = new CompaniesService();
+         CompaniesService c = new CompaniesService();
 
         // int companyId1 = 101;
         // String companyName1 = "Tech Innovations Ltd.";
@@ -218,7 +218,7 @@ public Timestamp getCompanyCreatedAt(int companyId) {
 
         // boolean success1 = c.addCompany(companyId1, companyName1, companyAddress1, createdAt1);
         // System.out.println("Company 1 added successfully: " + success1);
-        // System.out.println(c.getCompanyName(101));
+         System.out.println(c.getCompanyName(101));
          //System.out.println(c.setCompanyName(101,  "ZIM"));
         //  System.out.println(c.getAddress(101));
        // System.out.println(c.setAddress(101,  "Dr Yehuda Perach"));

@@ -1,4 +1,4 @@
-package serverDB;
+package com.company.onboarding.backend.handlers;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

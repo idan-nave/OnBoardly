@@ -1,4 +1,4 @@
-package handlers;
+package com.company.onboarding.backend.handlers;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.OutputStream;
-import utils.DatabaseUtil;  // הוסף את הייבוא של מחלקת DatabaseUtil
+import com.company.onboarding.backend.utils.DatabaseUtil;  // הוסף את הייבוא של מחלקת DatabaseUtil
 
 public class LoginHandler implements HttpHandler {
 
