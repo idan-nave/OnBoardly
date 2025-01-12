@@ -1,4 +1,4 @@
-document.getElementById("add-department").addEventListener("click", function () {
+document.getElementById("add-team").addEventListener("click", function () {
     // Collect input values
     const teamName = document.getElementById("companyName").value;
     const teamManager = document.getElementById("companyManager").value;
@@ -6,7 +6,7 @@ document.getElementById("add-department").addEventListener("click", function () 
   
     // Validate input
     if (!teamName || !teamManager) {
-      alert("Please enter both department name and manager!");
+      alert("Please enter both team name and manager!");
       return;
     }
   
@@ -26,9 +26,9 @@ document.getElementById("add-department").addEventListener("click", function () 
       .then((data) => {
         // Handle success response
         if (data.success) {
-          alert("Department added successfully!");
+          alert("Team added successfully!");
         } else {
-          alert("Failed to add department: " + data.message);
+          alert("Failed to add team: " + data.message);
         }
       })
       .catch((error) => {
