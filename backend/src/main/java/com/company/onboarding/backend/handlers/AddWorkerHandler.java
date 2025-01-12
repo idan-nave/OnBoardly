@@ -1,4 +1,4 @@
-package handlers;
+package com.company.onboarding.backend.handlers;
 
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpExchange;

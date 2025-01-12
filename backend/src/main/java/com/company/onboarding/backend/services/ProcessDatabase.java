@@ -51,15 +51,15 @@ public class ProcessDatabase {
     }
 
     public static void main(String[] args) {
-        // Create an instance of ProcessDatabase
-        ProcessDatabase processDatabase = new ProcessDatabase();
+        // // Create an instance of ProcessDatabase
+        // ProcessDatabase processDatabase = new ProcessDatabase();
 
-        // Get all process names
-        ArrayList<String> processNames = processDatabase.getAllProcessNames();
+        // // Get all process names
+        // ArrayList<String> processNames = processDatabase.getAllProcessNames();
 
-        // Print out the process names
-        for (String name : processNames) {
-            System.out.println(name);
-        }
+        // // Print out the process names
+        // for (String name : processNames) {
+        //     System.out.println(name);
+        // }
     }
 }

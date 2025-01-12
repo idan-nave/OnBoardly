@@ -1,9 +1,9 @@
-package handlers;
+package com.company.onboarding.backend.handlers;
 
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpExchange;
-import services.TeamService;
-import services.ProcessService;
+import com.company.onboarding.backend.services.TeamService;
+import com.company.onboarding.backend.services.ProcessService;
 
 import java.io.IOException;
 import java.io.OutputStream;

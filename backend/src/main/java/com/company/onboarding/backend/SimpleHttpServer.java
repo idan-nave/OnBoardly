@@ -1,6 +1,8 @@
+package com.company.onboarding.backend;
+
 import com.sun.net.httpserver.HttpServer;
-import handlers.DashboardHandler;
-import handlers.LoginHandler;
+import com.company.onboarding.backend.handlers.DashboardHandler;
+import com.company.onboarding.backend.handlers.LoginHandler;
 
 import java.net.InetSocketAddress;
 
