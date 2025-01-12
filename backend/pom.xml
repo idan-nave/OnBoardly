@@ -17,14 +17,12 @@
             <scope>provided</scope>
         </dependency>
 
-
-
+        <!-- MySQL Connector -->
         <dependency>
             <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.29</version> <!-- בחר את הגרסה המתאימה -->
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.34</version>
         </dependency>
-
 
         <!-- Jackson for JSON processing -->
         <dependency>

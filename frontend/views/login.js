@@ -1,15 +1,10 @@
-// login.js
-
 export const LoginPage = () => {
-  // Create a container for the login page
   const container = document.createElement("div");
-  container.classList.add("login-container"); // Optional class for styling
+  container.classList.add("login-container");
 
-  // Create the form
   const form = document.createElement("form");
   form.id = "loginform";
 
-  // Username label and input
   const usernameLabel = document.createElement("label");
   usernameLabel.setAttribute("for", "username");
   usernameLabel.textContent = "Username:";
@@ -20,7 +15,6 @@ export const LoginPage = () => {
   usernameInput.placeholder = "Enter your Username";
   usernameInput.required = true;
 
-  // Password label and input
   const passwordLabel = document.createElement("label");
   passwordLabel.setAttribute("for", "loginpassword");
   passwordLabel.textContent = "Password:";
@@ -31,24 +25,55 @@ export const LoginPage = () => {
   passwordInput.placeholder = "Enter your Password";
   passwordInput.required = true;
 
-  // Submit button
   const submitButton = document.createElement("button");
   submitButton.type = "submit";
-  submitButton.id = "loginbutton";
   submitButton.textContent = "Login";
 
-  // Append inputs and button to form
+  // יצירת errorContainer
+  const errorContainer = document.createElement("div");
+  errorContainer.id = "errorContainer";
+  errorContainer.style.color = "red";
+
+  // הוספת שדות הטופס והכפתור
   form.appendChild(usernameLabel);
   form.appendChild(usernameInput);
   form.appendChild(passwordLabel);
   form.appendChild(passwordInput);
   form.appendChild(submitButton);
 
-  // Append the form to the container
+  // הוספת errorContainer
+  form.appendChild(errorContainer);
+
   container.appendChild(form);
 
-  // Return the container for the router to handle rendering
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // מונע את הגשת הטופס הרגילה
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("loginpassword").value;
+
+    fetch('http://localhost:8080/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Login successful!");
+            window.location.href = "/dashboard"; // הפנייה לעמוד הבא
+        } else {
+            // עדכון הודעה ב-errorContainer
+            errorContainer.textContent = data.message;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        errorContainer.textContent = "An error occurred during login.";
+    });
+  });
+
   return container;
 };
-
-export default LoginPage;
