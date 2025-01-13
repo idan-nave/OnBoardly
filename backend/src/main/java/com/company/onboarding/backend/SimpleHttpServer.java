@@ -1,5 +1,6 @@
 package com.company.onboarding.backend;
 
+import com.company.onboarding.backend.handlers.RegisterHandler;
 import com.sun.net.httpserver.HttpServer;
 import com.company.onboarding.backend.handlers.DashboardHandler;
 import com.company.onboarding.backend.handlers.LoginHandler;
@@ -14,11 +15,11 @@ public class SimpleHttpServer {
         // הגדרת ה-Handlers
 //        server.createContext("/register", new RegisterHandler());
         server.createContext("/login", new LoginHandler());
-        server.createContext("/dashboard", new DashboardHandler());
+//        server.createContext("/worker", new WorkerHandler());
 //        server.createContext("/process", new ProccessHandler());
 //        server.createContext("/teams", new TeamsHandler());
 //        server.createContext("/addWorker", new AddWorkerHandler());
-//        server.createContext("/test", new TestHandler());
+//        server.createContext("/register", new RegisterHandler());
         // התחלת השרת
         server.start();
         System.out.println("Server started on http://localhost:8080");
